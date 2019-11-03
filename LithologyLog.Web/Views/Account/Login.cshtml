@@ -1,0 +1,116 @@
+﻿@model LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Giriş</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/Areas/Admin/Public/assets/images/icon/favicon.ico">
+
+    <!-- #region CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" /> <!--4.3.1-->
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/metisMenu.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link href="~/assets/css/export.min.css" rel="stylesheet" />
+    <!-- others css -->
+    <link rel="stylesheet" href="~/assets/css/typography.css">
+    <link rel="stylesheet" href="~/assets/css/default-css.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="~/assets/js/vendor/modernizr-2.8.3.min.js" type="cff1c652e04bc587c2968792-text/javascript"></script>
+    <!-- #endregion -->
+
+</head>
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area login-s2">
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form asp-action="Login" asp-controller="Account" method="post">
+
+                    <div class="login-form-head">
+                        <h4>ERP sisteminə daxil olun</h4>
+                        <p>İstifadəçi adınızı və şifrənizi daxil edərək sistemə giriş edin</p>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label asp-for="Username"></label>
+                            <input type="text" asp-for="Username" required>
+                            <i class="ti-user"></i>
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                        <div class="form-gp">
+                            <label asp-for="Password"></label>
+                            <input type="password" required asp-for="Password">
+                            <i class="ti-lock"></i>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3 mt-2"></div>
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">@sharedLocalizer["Login"] <i class="ti-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- login area end -->
+    <!-- #region Javascript -->
+    <!-- jquery latest version -->
+    <script src="~/jquery/jquery.min.js"></script>
+
+    <!-- bootstrap 4 js -->
+    <script src="~/assets/js/popper.min.js" type="07358c43f3bada22b561de57-text/javascript"></script>
+    @*<script src="~/assets/js/bootstrap.min.js" type="07358c43f3bada22b561de57-text/javascript"></script>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js" type="07358c43f3bada22b561de57-text/javascript"></script>
+    <script src="~/assets/js/metisMenu.min.js" type="07358c43f3bada22b561de57-text/javascript"></script>
+    <script src="~/assets/js/jquery.slimscroll.min.js" type="07358c43f3bada22b561de57-text/javascript"></script>
+    <script src="~/assets/js/jquery.slicknav.min.js" type="07358c43f3bada22b561de57-text/javascript"></script>
+
+    <!-- others plugins -->
+    <script src="~/assets/js/plugins.js" type="07358c43f3bada22b561de57-text/javascript"></script>
+    <script src="~/assets/js/scripts.js" type="07358c43f3bada22b561de57-text/javascript"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="~/assets/js/googleTagManager.js" type="07358c43f3bada22b561de57-text/javascript"></script>
+    <script type="07358c43f3bada22b561de57-text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+    <script src="~/assets/js/rocket-loader.min.js" data-cf-settings="07358c43f3bada22b561de57-|49" defer=""></script>
+
+    @*<script src="~/jquery-form-validator/formValidator.js"></script>*@
+    @*<script src="~/jquery-form-validator/jquery.form-validator.min.js"></script>*@
+    @*<script>
+            $(document).ready(function () {
+                $.validate({
+                    modules: 'security'
+                });
+            });
+        </script>*@
+    <!-- #endregion -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<UserApp> SignInManager
+@inject UserManager<UserApp> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="col-sm-6 clearfix">
+        <div class="user-profile pull-right">
+            @*<img class="avatar user-thumb" src="~/assets/images/author/avatar.png" alt="avatar">*@
+            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">@UserManager.GetUserName(User)<i class="fa fa-angle-down"></i></h4>
+            <div class="dropdown-menu">
+                @*<a class="dropdown-item" href="#">Mesajlar</a>
+                <a class="dropdown-item" href="#">Parametrlər</a>*@
+                @*<a type="" class="dropdown-item" href="#">Log Out</a>*@
+                <form asp-action="Logout" asp-controller="Account" method="post" class="dropdown-item" >
+                    <input class="dropdown-item" type="submit" name="LogOut" value="Çıxış"/>
+                </form>
+            </div>
+        </div>
+    </div>
+}
