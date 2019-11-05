@@ -5,7 +5,7 @@
 }
 
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js">
 
 <head>
     <meta charset="utf-8">
@@ -55,13 +55,13 @@
                     <div class="login-form-body">
                         <div class="form-gp">
                             <label asp-for="Username"></label>
-                            <input type="text" asp-for="Username" required>
+                            <input type="text" asp-for="Username">
                             <i class="ti-user"></i>
                             <span asp-validation-for="Username" class="text-danger"></span>
                         </div>
                         <div class="form-gp">
                             <label asp-for="Password"></label>
-                            <input type="password" required asp-for="Password">
+                            <input type="password" asp-for="Password">
                             <i class="ti-lock"></i>
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
@@ -101,6 +101,8 @@
         gtag('config', 'UA-23581568-13');
     </script>
     <script src="~/assets/js/rocket-loader.min.js" data-cf-settings="07358c43f3bada22b561de57-|49" defer=""></script>
+    @await Html.PartialAsync("_ValidationScriptsPartial"); }
+
 
     @*<script src="~/jquery-form-validator/formValidator.js"></script>*@
     @*<script src="~/jquery-form-validator/jquery.form-validator.min.js"></script>*@

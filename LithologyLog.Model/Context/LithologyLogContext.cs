@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using LithologyLog.Constant;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +31,8 @@ namespace LithologyLog.Model.Context
         {
 
             base.OnModelCreating(modelBuilder);
+ 
+
 
         }
     }

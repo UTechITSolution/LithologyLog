@@ -1,11 +1,13 @@
 ﻿using LithologyLog.Web.Lang;
 using LithologyLog.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace LithologyLog.Web.Controllers
 {
+    [Authorize]
     public class HomeController : BaseController
     {
         private LocalizerService _localizerService;

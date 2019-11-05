@@ -117,10 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Blocked" xml:space="preserve">
+    <value>Blocked</value>
+  </data>
+  <data name="LockedOut" xml:space="preserve">
+    <value>LockedOut</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="NotFoundUser" xml:space="preserve">
+    <value>NotFoundUser</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>This field is required</value>
   </data>
   <data name="Tittle" xml:space="preserve">
     <value>Tittle</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>WrongPassword</value>
   </data>
 </root>

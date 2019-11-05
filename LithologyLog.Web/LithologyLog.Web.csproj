@@ -23,14 +23,28 @@
 
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\SharedResources.az-Latn-AZ.resx">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Compile Update="Resources\SharedResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SharedResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
     <EmbeddedResource Update="Resources\SharedResources.en-US.resx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\SharedResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\SharedResources.ru-RU.resx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
 

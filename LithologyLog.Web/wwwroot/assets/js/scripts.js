@@ -48,8 +48,12 @@ $(document).ready(function () {
         $.cookie("leftSideBarStateAccounting", classList);
 
     });
-    const leftSideBarStateClasses = $.cookie("leftSideBarStateAccounting");
-    $('#page-container').addClass(leftSideBarStateClasses);
+
+    if ($('#page-container').length) {
+        const leftSideBarStateClasses = $.cookie("leftSideBarStateAccounting");
+        $('#page-container').addClass(leftSideBarStateClasses);
+    }
+   
     /*================================
     Start Footer resizer
     ==================================*/

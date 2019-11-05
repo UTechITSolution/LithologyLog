@@ -19,11 +19,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace LithologyLog.Web
 {
@@ -63,11 +66,18 @@ namespace LithologyLog.Web
             #endregion
 
             #region Database  access config
+
+
+            services.AddDbContext<LithologyLogContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<DbContext>(sp => sp.GetRequiredService<LithologyLogContext>());
+
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddScoped<DbContext>(sp => sp.GetRequiredService<LithologyLogContext>());
+
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -89,6 +99,8 @@ namespace LithologyLog.Web
             });
 
             #endregion
+
+
 
             #region General
             services.Configure<CookiePolicyOptions>(options =>
@@ -121,17 +133,41 @@ namespace LithologyLog.Web
                      return factory.Create("SharedResource", assemblyName.Name);
                  };
              })
+
              .AddJsonOptions(options =>
                {
                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
                    options.SerializerSettings.DateFormatString = "dd'/'MM'/'yyyy HH:mm:ss";
                })
              .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                {
+                     new CultureInfo(LANGCONSTANT.Az),
+                   new CultureInfo(LANGCONSTANT.En),
+                   new CultureInfo(LANGCONSTANT.Ru)
+                };
+
+                options.DefaultRequestCulture = new RequestCulture(culture: LANGCONSTANT.Az, uiCulture: LANGCONSTANT.Az);
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+
+
+            });
+
+
+
             #endregion
         }
 
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app,
+                              IHostingEnvironment env,
+                              UserManager<UserApp> userManager,
+                              RoleManager<ApplicationRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -143,13 +179,10 @@ namespace LithologyLog.Web
                 app.UseHsts();
             }
 
-            #region For Decimal
-            var cultureInfo = new CultureInfo("en-GB");
-            cultureInfo.NumberFormat.NumberGroupSeparator = ".";
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
 
-            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
-            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
-            #endregion
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -171,13 +204,19 @@ namespace LithologyLog.Web
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures,
                 DefaultRequestCulture = new RequestCulture(LANGCONSTANT.Az),
+                RequestCultureProviders = new List<IRequestCultureProvider>
+                {
+                   new QueryStringRequestCultureProvider
+                   {
+                       QueryStringKey = "culture",
+                       UIQueryStringKey = "ui-culture"
+                   }
+                }
             };
 
 
             var requestProvider = new RouteDataRequestCultureProvider();
             localizationOptions.RequestCultureProviders.Insert(0, requestProvider);
-
-            var ci = new CultureInfo(LANGCONSTANT.Az);
 
             app.UseRouter(routes =>
             {
@@ -185,11 +224,10 @@ namespace LithologyLog.Web
                 {
                     subApp.UseRequestLocalization(localizationOptions);
 
-
                     subApp.UseMvc(mvcRoutes =>
                     {
                         mvcRoutes.MapRoute(
-                          name: "defaultLangIndex",
+                          name: "default",
                           template: "{culture=" + LANGCONSTANT.Az + "}/{controller=Home}/{action=Index}/{id?}");
 
                         mvcRoutes.MapRoute(
@@ -202,6 +240,11 @@ namespace LithologyLog.Web
             });
 
             #endregion
+
+            DbInitializer.Seed(userManager, roleManager, Configuration).Wait();
         }
+
+
+
     }
 }

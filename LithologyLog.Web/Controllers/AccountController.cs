@@ -1,8 +1,10 @@
-﻿using LithologyLog.Model;
+﻿using LithologyLog.Constant;
+using LithologyLog.Model;
 using LithologyLog.Web.Lang;
 using LithologyLog.Web.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 using System.Threading.Tasks;
 
 namespace LithologyLog.Web.Controllers
@@ -27,6 +29,7 @@ namespace LithologyLog.Web.Controllers
 
         public IActionResult Login()
         {
+        
             return View();
         }
 
