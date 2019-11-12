@@ -61,11 +61,29 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Istifadəçi artıq mövcutdur.
+        /// </summary>
+        public static string AleadyTakenUsername {
+            get {
+                return ResourceManager.GetString("AleadyTakenUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İstifadəçinin hesabınız bloklanıb.
         /// </summary>
         public static string Blocked {
             get {
                 return ResourceManager.GetString("Blocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Xeta baş verdi.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
             }
         }
         
@@ -84,6 +102,15 @@ namespace LithologyLog.Web.Resources {
         public static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bütün xanalar doldurulmalıdır.
+        /// </summary>
+        public static string ModelNotValid {
+            get {
+                return ResourceManager.GetString("ModelNotValid", resourceCulture);
             }
         }
         
@@ -111,6 +138,33 @@ namespace LithologyLog.Web.Resources {
         public static string Required {
             get {
                 return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rol.
+        /// </summary>
+        public static string Role {
+            get {
+                return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Əməliyyat uğurla yerinə yetirildi.
+        /// </summary>
+        public static string Success {
+            get {
+                return ResourceManager.GetString("Success", resourceCulture);
             }
         }
         
