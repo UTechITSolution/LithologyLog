@@ -4,6 +4,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LithologyLog.Web.Models
 {
+    public class UserList
+    {
+        public string Id { get; set; }
+       
+        public string UserName { get; set; }
+       
+        public string Status { get; set; }
+    }
+
     public class UserCreateViewModel
     {
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(SharedResources))]
@@ -12,6 +21,7 @@ namespace LithologyLog.Web.Models
 
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(SharedResources))]
         [Display(Name = "Password", ResourceType = typeof(SharedResources))]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Display(Name = "Status", ResourceType = typeof(SharedResources))]
@@ -31,8 +41,8 @@ namespace LithologyLog.Web.Models
         [Display(Name = "UserName", ResourceType = typeof(SharedResources))]
         public string UserName { get; set; }
 
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(SharedResources))]
         [Display(Name = "Password", ResourceType = typeof(SharedResources))]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Display(Name = "Status", ResourceType = typeof(SharedResources))]

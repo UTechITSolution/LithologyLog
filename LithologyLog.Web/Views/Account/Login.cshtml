@@ -46,22 +46,21 @@
     <div class="login-area login-s2">
         <div class="container">
             <div class="login-box ptb--100">
-                <form asp-action="Login" asp-controller="Account" method="post">
+                <form asp-action="Login" asp-controller="Account" method="post"  >
 
                     <div class="login-form-head">
-                        <h4>ERP sisteminə daxil olun</h4>
-                        <p>İstifadəçi adınızı və şifrənizi daxil edərək sistemə giriş edin</p>
+                        <img src="~/assets/images/View/logo.png" />
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
                             <label asp-for="Username"></label>
-                            <input type="text" asp-for="Username">
+                            <input id="@(new Random().NextDouble())"   type="text" asp-for="Username">
                             <i class="ti-user"></i>
                             <span asp-validation-for="Username" class="text-danger"></span>
                         </div>
                         <div class="form-gp">
                             <label asp-for="Password"></label>
-                            <input type="password" asp-for="Password">
+                            <input id="@(new Random().NextDouble())"  type="password" asp-for="Password">
                             <i class="ti-lock"></i>
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>

@@ -66,6 +66,35 @@ namespace LithologyLog.Model.Migrations
                     b.ToTable("AspNetUserRoles");
                 });
 
+            modelBuilder.Entity("LithologyLog.Model.Organization", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Fax")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("MobileNumber");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ShortName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("TIN")
+                        .HasMaxLength(10);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Organization");
+                });
+
             modelBuilder.Entity("LithologyLog.Model.UserApp", b =>
                 {
                     b.Property<string>("Id")

@@ -1,1 +1,54 @@
-﻿ 
+﻿
+@section styles{
+    <link href="~/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
+
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h6>@sharedLocalizer["UserList"]</h6>
+        </div>
+        <div class="card-body">
+            <div class=" d-flex justify-content-between">
+                <p>
+                    <a asp-controller="User" asp-action="Create" id="addButton" data-toggle="modal" data-target="#pageModal" class="btn btn-outline-secondary"><i class="fa fa-plus-circle  mr-2"></i>@sharedLocalizer["New"]</a>
+                </p>
+
+            </div>
+            <hr />
+            <br />
+            <div class="single-table">
+                <div class="table-responsive">
+                    <table id="dataTable" class="table  table-bordered progress-table text-center w-100">
+                        <thead>
+                            <tr role="row">
+                            <tr>
+                                <th>#</th>
+                                <th>@sharedLocalizer["UserName"]</th>
+                                <th>@sharedLocalizer["Status"]</th>
+
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="pageModal" class="modal fade" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/DataTables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Custom/SwalUtility.js"></script>
+    <script src="~/Custom/User/DataTabel.js"></script>
+    <script src="~/Custom/User/crudoperation.js"></script>
+}
+

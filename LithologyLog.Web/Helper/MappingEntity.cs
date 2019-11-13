@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using LithologyLog.Model;
+using LithologyLog.Web.Models;
 
 namespace LithologyLog.Web.Helper
 {
@@ -6,8 +8,8 @@ namespace LithologyLog.Web.Helper
     {
         public MappingEntity()
         {
-            //CreateMap<FareDistance, FareDistanceViewModel>().ReverseMap();
-             
+             CreateMap<Organization, OrganizationCreateViewModel>().ReverseMap();
+             CreateMap<Organization, OrganizationEditViewModel>().ReverseMap();
         }
     }
 }

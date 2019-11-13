@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LithologyLog.Model.DB_Table
+namespace LithologyLog.Model
 {
     public class Organization
     {

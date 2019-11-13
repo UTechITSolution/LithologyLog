@@ -51,6 +51,24 @@
 
 -----------------------------------------------------------------------------------*/
 
+.lang-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+    .lang-ul li {
+        float: left;
+    }
+
+        .lang-ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+        }
 
 /*scroll bar customize*/
  body::-webkit-scrollbar{
@@ -175,7 +193,7 @@
 }
 
 .sidebar-header {
-    padding: 19px 32px 20px;
+    padding: 0px 14px 0px;
     background: #303641;
     border-bottom: 1px solid #343e50;
 }
@@ -435,7 +453,7 @@
 /*-------------------- 2.2 Header Area -------------------*/
 
 .header-area {
-    padding: 15px 30px;
+    padding: 8px 30px;
     background: #fff;
     border-bottom: 1px solid #d8e3e7;
 }
@@ -2385,7 +2403,7 @@ table.dataTable thead td {
     }
 
 .login-form-body {
-    padding: 50px;
+    /*padding: 50px;*/
 }
 
 .form-gp {

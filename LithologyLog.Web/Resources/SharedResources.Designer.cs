@@ -61,6 +61,33 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aktif.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daxil etmə paneli.
+        /// </summary>
+        public static string AddedPanel {
+            get {
+                return ResourceManager.GetString("AddedPanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bu təşkilat artıq mövcutdur.
+        /// </summary>
+        public static string AleadyTakenOrganization {
+            get {
+                return ResourceManager.GetString("AleadyTakenOrganization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Istifadəçi artıq mövcutdur.
         /// </summary>
         public static string AleadyTakenUsername {
@@ -79,11 +106,56 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bağla.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deaktif.
+        /// </summary>
+        public static string Deactive {
+            get {
+                return ResourceManager.GetString("Deactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Redaktə paneli.
+        /// </summary>
+        public static string EditPanel {
+            get {
+                return ResourceManager.GetString("EditPanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elektron poçt ünvanı.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Xeta baş verdi.
         /// </summary>
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fax.
+        /// </summary>
+        public static string Fax {
+            get {
+                return ResourceManager.GetString("Fax", resourceCulture);
             }
         }
         
@@ -106,6 +178,24 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ana səhifə.
+        /// </summary>
+        public static string MainPage {
+            get {
+                return ResourceManager.GetString("MainPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Əlaqə nömrəsi.
+        /// </summary>
+        public static string MobileNumber {
+            get {
+                return ResourceManager.GetString("MobileNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bütün xanalar doldurulmalıdır.
         /// </summary>
         public static string ModelNotValid {
@@ -115,11 +205,38 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ad.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yeni.
+        /// </summary>
+        public static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İstifadəçi tapılmadı.
         /// </summary>
         public static string NotFoundUser {
             get {
                 return ResourceManager.GetString("NotFoundUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Təşkilatların siyahısı.
+        /// </summary>
+        public static string OrganizationList {
+            get {
+                return ResourceManager.GetString("OrganizationList", resourceCulture);
             }
         }
         
@@ -151,6 +268,24 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yadda saxla.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qısa adı.
+        /// </summary>
+        public static string ShortName {
+            get {
+                return ResourceManager.GetString("ShortName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string Status {
@@ -169,6 +304,15 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to VÖEN.
+        /// </summary>
+        public static string TIN {
+            get {
+                return ResourceManager.GetString("TIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başlıq.
         /// </summary>
         public static string Tittle {
@@ -178,11 +322,29 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İstifadəçilərin siyahısı.
+        /// </summary>
+        public static string UserList {
+            get {
+                return ResourceManager.GetString("UserList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İstifadəçi adı.
         /// </summary>
         public static string UserName {
             get {
                 return ResourceManager.GetString("UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İstifadəçilər.
+        /// </summary>
+        public static string Users {
+            get {
+                return ResourceManager.GetString("Users", resourceCulture);
             }
         }
         

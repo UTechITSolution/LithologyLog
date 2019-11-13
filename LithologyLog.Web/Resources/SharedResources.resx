@@ -117,14 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="AddedPanel" xml:space="preserve">
+    <value>Daxil etmə paneli</value>
+  </data>
+  <data name="AleadyTakenOrganization" xml:space="preserve">
+    <value>Bu təşkilat artıq mövcutdur</value>
+  </data>
   <data name="AleadyTakenUsername" xml:space="preserve">
     <value>Istifadəçi artıq mövcutdur</value>
   </data>
   <data name="Blocked" xml:space="preserve">
     <value>İstifadəçinin hesabınız bloklanıb</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Bağla</value>
+  </data>
+  <data name="Deactive" xml:space="preserve">
+    <value>Deaktif</value>
+  </data>
+  <data name="EditPanel" xml:space="preserve">
+    <value>Redaktə paneli</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Elektron poçt ünvanı</value>
+  </data>
   <data name="Error" xml:space="preserve">
     <value>Xeta baş verdi</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
   </data>
   <data name="LockedOut" xml:space="preserve">
     <value>Hesabınız 5 dəqiqə müddətində bloklanıb</value>
@@ -132,11 +156,26 @@
   <data name="Login" xml:space="preserve">
     <value>Giriş</value>
   </data>
+  <data name="MainPage" xml:space="preserve">
+    <value>Ana səhifə</value>
+  </data>
+  <data name="MobileNumber" xml:space="preserve">
+    <value>Əlaqə nömrəsi</value>
+  </data>
   <data name="ModelNotValid" xml:space="preserve">
     <value>Bütün xanalar doldurulmalıdır</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
   <data name="NotFoundUser" xml:space="preserve">
     <value>İstifadəçi tapılmadı</value>
+  </data>
+  <data name="OrganizationList" xml:space="preserve">
+    <value>Təşkilatların siyahısı</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Şifrə</value>
@@ -147,17 +186,32 @@
   <data name="Role" xml:space="preserve">
     <value>Rol</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Yadda saxla</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>Qısa adı</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="Success" xml:space="preserve">
     <value>Əməliyyat uğurla yerinə yetirildi</value>
   </data>
+  <data name="TIN" xml:space="preserve">
+    <value>VÖEN</value>
+  </data>
   <data name="Tittle" xml:space="preserve">
     <value>Başlıq</value>
   </data>
+  <data name="UserList" xml:space="preserve">
+    <value>İstifadəçilərin siyahısı</value>
+  </data>
   <data name="UserName" xml:space="preserve">
     <value>İstifadəçi adı</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>İstifadəçilər</value>
   </data>
   <data name="WrongPassword" xml:space="preserve">
     <value>Şifrə yanlışdır</value>

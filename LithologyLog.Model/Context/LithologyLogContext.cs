@@ -26,6 +26,7 @@ namespace LithologyLog.Model.Context
         public DbSet<UserApp> UserApps { get; set; }
         public DbSet<ApplicationRole> ApplicationRoles { get; set; }
         public DbSet<ApplicationUserRole> ApplicationUserRoles { get; set; }
+        public DbSet<Organization> Organization { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
