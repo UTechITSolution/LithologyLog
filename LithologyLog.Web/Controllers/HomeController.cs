@@ -1,5 +1,6 @@
 ﻿using LithologyLog.Web.Lang;
 using LithologyLog.Web.Models;
+using LithologyLog.Web.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,17 +11,18 @@ namespace LithologyLog.Web.Controllers
     [Authorize]
     public class HomeController : BaseController
     {
-        private LocalizerService _localizerService;
-
+        private readonly LocalizerService _localizerService;
 
         public HomeController(LocalizerService localizerService)
         {
             _localizerService = localizerService;
+
         }
 
         public IActionResult Index()
         {
             ViewBag.Tittle = _localizerService["Tittle"];
+            
             return View();
         }
 

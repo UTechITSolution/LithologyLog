@@ -5,6 +5,7 @@ using LithologyLog.Model.Context;
 using LithologyLog.Repository;
 using LithologyLog.Web.Helper;
 using LithologyLog.Web.Lang;
+using LithologyLog.Web.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -76,8 +77,10 @@ namespace LithologyLog.Web
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+          
+            services.AddScoped<IColumRepository, ColumRepository>();
 
-
+            
 
             services.Configure<CookiePolicyOptions>(options =>
             {
