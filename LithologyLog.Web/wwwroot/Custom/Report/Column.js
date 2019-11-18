@@ -1,4 +1,5 @@
-﻿//#region Draw columns border and text
+﻿
+//#region Draw columns border and text
 
 function GenerateColumn(ctx) {
 
@@ -89,6 +90,7 @@ function DrawColumn_7(ctx) {
 
     var column = _columns[7];
     if (column.Visible) {
+
         HorizontalText(ctx, 7, headerHeight / 2);
     }
 
@@ -98,7 +100,9 @@ function DrawColumn_7(ctx) {
 function DrawColumn_11(ctx) {
 
     var column = _columns[11];
+
     if (column.Visible) {
+
         VerticalText(ctx, 11);
     }
 
@@ -142,6 +146,7 @@ function DrawColumn_8(ctx) {
 }
 
 function DrawColumn_9(ctx) {
+
     var column = _columns[9];
 
     if (column.Visible) {
@@ -237,12 +242,16 @@ function FillColumn(ctx) {
     FillColumn_5(ctx);
     FillColumn_6(ctx);
     FillColumn_7(ctx);
+    FillColumn_8(ctx);
+    FillColumn_9(ctx);
+    FillColumn_10(ctx);
+    FillColumn_12(ctx);
 }
 
 
 function FillCell(ctx, length, index, text) {
 
-    var page = FindPage(length);
+    var page = FindPageLeftSide(length);
 
     if (page === FindCanvasId(ctx)) {
 
@@ -258,7 +267,10 @@ function FillCell(ctx, length, index, text) {
 
         var X1 = column.X - column.Width;
 
-        ctx.fillText(text, X1 + marginLeft, height - 10);
+        if (text !== null) {
+            ctx.fillText(text, X1 + marginLeft, height - 10);
+        }
+
 
     }
 }
@@ -321,9 +333,9 @@ function FillColumn_6(ctx) {
 
             var Y2 = columnValues[i].Y2;
 
-            var pageY1 = FindPage(Y1);
+            var pageY1 = FindPageLeftSide(Y1);
 
-            var pageY2 = FindPage(Y2);
+            var pageY2 = FindPageLeftSide(Y2);
 
             if (pageY1 === FindCanvasId(ctx)) {
 
@@ -414,8 +426,171 @@ function FillColumn_6(ctx) {
 
 }
 
-
 function FillColumn_7(ctx) {
+
+    var column = _columns[6];
+
+    if (column.Visible) {
+
+        var columnValues = _pageCreationMember.Columns_7;
+
+        for (var i = 0; i < columnValues.length; i++) {
+
+            FillCell(ctx, columnValues[i].Y, 6, null);
+
+            var length = columnValues[i].Length1;
+
+            var page = FindPageRightSide(length);
+
+            if (page === FindCanvasId(ctx)) {
+
+                if (length > 20) {
+                    length -= (page - 1) * 20;
+                }
+
+                var height = length * 70 + rullerHeight;
+
+                ctx.moveTo(column.X - column.Width, height);
+
+                var marginLeft = (column.Width - ctx.measureText(columnValues[i].Value).width) / 2;
+
+                var X1 = column.X - column.Width;
+
+                ctx.fillText(columnValues[i].Value, X1 + marginLeft, height - 20);
+
+            }
+
+
+
+        }
+    }
+
+
+}
+
+function FillColumn_8(ctx) {
+
+    var column = _columns[7];
+
+    if (column.Visible) {
+
+        var columnValues = _pageCreationMember.Columns_8;
+
+        var X1 = column.X - column.Width;
+
+        for (var i = 0; i < columnValues.length; i++) {
+
+            FillCell(ctx, columnValues[i].Y, 7, null);
+
+            var page = FindPageLeftSide(columnValues[i].Y);
+
+            if (page === FindCanvasId(ctx)) {
+
+                var linesArray = SplitText(ctx, columnValues[i].Value, column.Width);
+
+
+                linesArray.reverse();
+
+                for (var t = 0; t < linesArray.length; t++) {
+
+                    let height = (immutablerLeftBeginNumber - columnValues[i].TextHeight - (page - 1) * 20) * 70 + rullerHeight;
+
+                    let increaseHeight = height - (t + 1) * 20;
+
+                    if (increaseHeight >= ctx.height) {
+
+                        nextLineArray.push(linesArray[t]);
+                    }
+                    else {
+                        ctx.fillText(linesArray[t], X1 + 3, increaseHeight);
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+function FillColumn_9(ctx) {
+
+    var column = _columns[8];
+
+    if (column.Visible) {
+
+        var eachColumn = column.Width / 3;
+
+        var X1 = column.X - column.Width;
+
+        var columnValues = _pageCreationMember.Columns_9;
+
+        for (var i = 0; i < columnValues.length; i++) {
+
+            var page = FindPageLeftSide(columnValues[i].Y);
+
+            if (page === FindCanvasId(ctx)) {
+
+                var height = (immutablerLeftBeginNumber - columnValues[i].Y - (page - 1) * 20) * 70 + rullerHeight;
+
+                ctx.fillText(columnValues[i].Value1, X1 + eachColumn / 2 - 5, height);
+
+                ctx.fillText(columnValues[i].Value2, X1 + column.Width / 2 - ctx.measureText(columnValues[i].Value2).width / 2, height);
+
+                ctx.fillText(columnValues[i].Value3, X1 + column.Width - eachColumn / 2 - ctx.measureText(columnValues[i].Value3).width / 2, height);
+            }
+        }
+    }
+
+}
+
+function FillColumn_10(ctx) {
+
+    var column = _columns[9];
+
+    if (column.Visible) {
+
+        var X1 = column.X - column.Width;
+
+        var columnValues = _pageCreationMember.Columns_10;
+
+        for (var i = 0; i < columnValues.length; i++) {
+
+            var page = FindPageLeftSide(columnValues[i].Y);
+
+            if (page === FindCanvasId(ctx)) {
+
+                var height = (immutablerLeftBeginNumber - columnValues[i].Y - (page - 1) * 20) * 70 + rullerHeight;
+
+                let rullerWidth = parseFloat(columnValues[i].Value);
+
+                let width = 155 * rullerWidth / 60;
+
+                width += (column.Width - 155) / 2;
+
+                ctx.fillStyle = "#ecebeb";
+
+                ctx.fillRect(X1, height - 20, width, 30);
+
+                ctx.stroke();
+
+                SetContextDefaultStyle(ctx);
+
+                ctx.font = "14px Times new roman";
+
+                let lineText = "N=" + columnValues[i].Value;
+
+                ctx.fillText(lineText, X1 + width / 2 - ctx.measureText(lineText).width/2, height);
+
+                SetContextDefaultStyle(ctx);
+
+            }
+        }
+    }
+
+}
+
+
+function FillColumn_12(ctx) {
 
     var column = _columns[11];
 
@@ -428,7 +603,7 @@ function FillColumn_7(ctx) {
 
             var length = columnValues[i].Y;
 
-            var page = FindPage(length);
+            var page = FindPageLeftSide(length);
 
             if (page === FindCanvasId(ctx)) {
 
@@ -445,7 +620,7 @@ function FillColumn_7(ctx) {
     }
 }
 
-function FindPage(length) {
+function FindPageLeftSide(length) {
 
     if (immutablerLeftBeginNumber === length) {
 
@@ -454,6 +629,14 @@ function FindPage(length) {
 
     return Math.ceil((immutablerLeftBeginNumber - length) / 20);
 }
+
+
+function FindPageRightSide(length) {
+
+    return Math.ceil(length / 20);
+}
+
+
 
 function FindCanvasId(ctx) {
     return parseInt(ctx.canvas.id.split('_')[1]);

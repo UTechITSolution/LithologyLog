@@ -106,30 +106,34 @@ function DrawRightRuler(ctx) {
 
 function DrawHorRulerOne(ctx, x, y) {
 
-
     ctx.moveTo(x, y);
+
     ctx.lineTo(x + 150, y);
 
     var lineNumber = 0;
-
      
     for (var i = 0; i < 31; i++) {
 
         ctx.moveTo(x, y);
 
         if (i % 5 === 0) {
+        
             ctx.lineTo(x, y + 16);
+
             ctx.fillText(lineNumber, x - 5, y + 28);
+
             ctx.stroke();
+
             lineNumber += 10;
 
             SetContextLightGrayStyle(ctx);
 
             ctx.moveTo(x, y + 40);
+         
             ctx.lineTo(x, tabelHeight);
            
             ctx.stroke();
-
+   
             SetContextDefaultStyle(ctx);
         }
         else {
@@ -145,39 +149,42 @@ function DrawHorRulerOne(ctx, x, y) {
 function DrawHorRulerTwo(ctx, x, y) {
 
     ctx.moveTo(x, y);
+
     ctx.lineTo(x + 100, y);
 
     var lineNumber = 0;
-
-    ctx.font = "12px Arial";
 
     for (var i = 0; i < 21; i++) {
 
         ctx.moveTo(x, y);
 
         if (i % 5 === 0) {
+
             ctx.lineTo(x, y + 16);
+
             if (i % 10 === 0) {
+
                 ctx.fillText(lineNumber, x - (i === 0 ? 3 : 10), y + 28);
+
                 lineNumber += 200;
-               
             }
 
             ctx.stroke();
+
             SetContextLightGrayStyle(ctx);
 
             ctx.moveTo(x, y + 40);
+
             ctx.lineTo(x, tabelHeight);
+
             ctx.stroke();
+
             SetContextDefaultStyle(ctx);
-
-
         }
         else {
             ctx.lineTo(x, y + 10);
-            ctx.stroke();
 
-
+            
         }
 
         x += 5;

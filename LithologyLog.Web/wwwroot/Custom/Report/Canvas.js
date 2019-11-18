@@ -1,4 +1,6 @@
 ﻿
+var contexts = new Array();
+
 var headerHeight = 160;
 
 var tabelHeight = 0;
@@ -35,7 +37,11 @@ $.ajax({
 
             var ctx = CreateCanvas(i);
 
+            contexts.push(ctx);
+
             Init(ctx);
+
+           
         }
     }
 });
@@ -146,7 +152,10 @@ function CreateCanvas(id) {
 function SetContextDefaultStyle(ctx) {
 
     ctx.beginPath();
+
     ctx.font = "16px Times new roman";
+
+    ctx.setLineDash([]);
 
     ctx.lineWidth = 1;
 
@@ -158,6 +167,10 @@ function SetContextDefaultStyle(ctx) {
 function SetContextLightGrayStyle(ctx) {
 
     ctx.beginPath();
-    ctx.strokeStyle = '#dadada';
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = '#000000';
     ctx.lineWidth = 0.7;
 }
+
+ 
+

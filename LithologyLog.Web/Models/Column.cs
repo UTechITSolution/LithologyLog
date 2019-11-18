@@ -12,6 +12,9 @@ namespace LithologyLog.Web.Models
         public ICollection<Column_5> Columns_5 { get; set; }
         public ICollection<Column_6> Columns_6 { get; set; }
         public ICollection<Column_7> Columns_7 { get; set; }
+        public ICollection<Column_8> Columns_8 { get; set; }
+        public ICollection<Column_9> Columns_9 { get; set; }
+        public ICollection<Column_10> Columns_10 { get; set; }
         public ICollection<Column_12> Columns_12 { get; set; }
     }
 
@@ -61,15 +64,29 @@ namespace LithologyLog.Web.Models
         public string ImageSrc { get; set; }
     }
 
+  
+
     public class Column_7 : ColumnBase
     {
-
-        public string ImageSrc { get; set; }
+        public float Length1 { get; set; }
+        public float Length2 { get; set; }
     }
 
     public class Column_8 : ColumnBase
     {
-        public string ImageSrc { get; set; }
+        public float TextHeight { get; set; }
+    }
+
+    public class Column_9 : ColumnBase
+    {
+        public float Value1 { get; set; }
+        public float Value2 { get; set; }
+        public float Value3 { get; set; }
+    }
+
+    public class Column_10 : ColumnBase
+    {
+
     }
 
     public class Column_12 : ColumnBase
