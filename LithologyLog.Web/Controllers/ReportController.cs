@@ -55,7 +55,7 @@ namespace LithologyLog.Web.Controllers
 
             ICollection<Column_6> columns_6 = new List<Column_6>
             {
-               new Column_6 { ImageSrc="/assets/images/Texture/1.png",Y= 100.4f,Y2=76.97f }
+               new Column_6 { ImageSrc="/assets/images/Texture/1.png", Y= 100.4f, Y2=76.97f }
             };
 
             ICollection<Column_7> columns_7 = new List<Column_7>
@@ -70,14 +70,8 @@ namespace LithologyLog.Web.Controllers
 
             ICollection<Column_9> columns_9 = new List<Column_9>
             {
-               new Column_9 {Value1=8, Value2=14,Value3=10, Y= 98.97f},
-               new Column_9 {Value1=8, Value2=14,Value3=10, Y= 95.97f}
-            };
-
-            ICollection<Column_12> columns_12 = new List<Column_12>
-            {
-               new Column_12 { Value= "anQIV",Y= 98.97f },
-                new Column_12 { Value= "Xəzər mərtəbəsi",Y= 86.97f }
+               new Column_9 {Value1=8, Value2=14, Value3=10, Y= 98.97f},
+               new Column_9 {Value1=8, Value2=14, Value3=10, Y= 95.97f}
             };
 
             ICollection<Column_10> columns_10 = new List<Column_10>
@@ -85,6 +79,19 @@ namespace LithologyLog.Web.Controllers
                new Column_10 { Value= "24", Y= 98.97f },
                new Column_10 { Value= "48", Y= 95.97f }
             };
+
+
+            ICollection<Column_12> columns_12 = new List<Column_12>
+            {
+               new Column_12 { Value= "anQIV",Y= 98.97f },
+               new Column_12 { Value= "Xəzər mərtəbəsi",Y= 86.97f }
+            };
+
+            ICollection<Column_11> columns_11 = new List<Column_11>
+            {
+               new Column_11 { Value="350", Y= 98.97f, Y2=95.97f }
+            };
+
 
             PageCreationMember pageCreationMember = new PageCreationMember
             {
@@ -98,6 +105,7 @@ namespace LithologyLog.Web.Controllers
                 Columns_8 = columns_8,
                 Columns_9 = columns_9,
                 Columns_10 = columns_10,
+                Columns_11 = columns_11,
                 Columns_12 = columns_12,
             };
 

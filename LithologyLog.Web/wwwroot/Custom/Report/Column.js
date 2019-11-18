@@ -1,4 +1,8 @@
 ﻿
+
+
+var lineArray = new Array();
+
 //#region Draw columns border and text
 
 function GenerateColumn(ctx) {
@@ -325,6 +329,7 @@ function FillColumn_6(ctx) {
     var column = _columns[5];
 
     if (column.Visible) {
+
         var columnValues = _pageCreationMember.Columns_6;
 
         for (var i = 0; i < columnValues.length; i++) {
@@ -361,18 +366,16 @@ function FillColumn_6(ctx) {
                 };
 
                 if (pageY2 === FindCanvasId(ctx)) {
+
                     let lineHeight = (immutablerLeftBeginNumber - Y2 - (pageY2 - 1) * 20) * 70 + rullerHeight;
 
                     ctx.moveTo(column.X - column.Width, lineHeight);
 
                     ctx.lineTo(column.X, lineHeight);
                 }
-
-
-
-
             }
             else if (pageY2 > FindCanvasId(ctx)) {
+
                 let column = _columns[5];
 
                 let X1 = column.X - column.Width;
@@ -579,13 +582,30 @@ function FillColumn_10(ctx) {
 
                 let lineText = "N=" + columnValues[i].Value;
 
-                ctx.fillText(lineText, X1 + width / 2 - ctx.measureText(lineText).width/2, height);
+                ctx.fillText(lineText, X1 + width / 2 - ctx.measureText(lineText).width / 2, height);
 
                 SetContextDefaultStyle(ctx);
+
+                let obj = { "PageId": page, "Order": i, "X": X1 + width, "Y1": height + 10 };
+
+                lineArray.push(obj);
+
+                if (i !== 0) {
+
+                    DrawLineBetwenRec(ctx, page, i - 1, X1 + width, height - 20);
+
+                }
+
 
             }
         }
     }
+
+}
+
+function FillColumn_11(ctx) {
+
+  
 
 }
 
@@ -642,3 +662,26 @@ function FindCanvasId(ctx) {
     return parseInt(ctx.canvas.id.split('_')[1]);
 }
 
+
+
+function DrawLineBetwenRec(ctx, pageId, order, x, y) {
+
+    for (var i = 0; i < lineArray.length; i++) {
+
+        if (lineArray[i].Order === order && lineArray[i].PageId === pageId) {
+
+            ctx.moveTo(x, y + 0.5);
+
+            ctx.strokeStyle = 'red';
+
+            ctx.fillStyle = 'red';
+
+            ctx.lineTo(lineArray[i].X, lineArray[i].Y1 + 0.5);
+
+            ctx.stroke();
+
+            SetContextDefaultStyle(ctx);
+
+        }
+    }
+}
