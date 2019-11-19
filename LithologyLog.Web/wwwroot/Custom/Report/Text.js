@@ -140,3 +140,5 @@ function SplitText(ctx, text, width) {
     return linesArray;
 
 }
+
+ 

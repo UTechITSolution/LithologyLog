@@ -89,7 +89,21 @@ namespace LithologyLog.Web.Controllers
 
             ICollection<Column_11> columns_11 = new List<Column_11>
             {
-               new Column_11 { Value="350", Y= 98.97f, Y2=95.97f }
+               new Column_11 { Value="350", Y= 98.97f, Y2=95.97f,ColumnType=(int)ColumnType.PartOne },
+               new Column_11 { Value="350", Y= 97.97f, Y2=93.97f,ColumnType=(int)ColumnType.PartTwo }
+            };
+
+            ICollection<Column_13> columns_13 = new List<Column_13>
+            {
+               new Column_13 { Value="60", Y= 98.97f, Y2=95.97f,ColumnType=(int)ColumnType.PartOne },
+               new Column_13 { Value="70",  Y= 98.97f, Y2=95.97f,ColumnType=(int)ColumnType.PartTwo },
+               new Column_13 { Value="100",  Y= 98.97f, Y2=95.97f,ColumnType=(int)ColumnType.PartThree },
+               new Column_13 { Value="34", Y= 95.97f, Y2=93f,ColumnType=(int)ColumnType.PartOne },
+               new Column_13 { Value="43", Y= 95.97f, Y2=93f,ColumnType=(int)ColumnType.PartTwo },
+               new Column_13 { Value="-1",Y= 95.97f, Y2=93f,ColumnType=(int)ColumnType.PartThree },
+               new Column_13 { Value="0", Y= 93f, Y2=88.97f,ColumnType=(int)ColumnType.PartOne },
+               new Column_13 { Value="33", Y= 93f, Y2=88.97f,ColumnType=(int)ColumnType.PartTwo },
+               new Column_13 { Value="100",  Y= 93f, Y2=88.97f,ColumnType=(int)ColumnType.PartThree },
             };
 
 
@@ -107,6 +121,7 @@ namespace LithologyLog.Web.Controllers
                 Columns_10 = columns_10,
                 Columns_11 = columns_11,
                 Columns_12 = columns_12,
+                Columns_13 = columns_13,
             };
 
             var json = JsonConvert.SerializeObject(pageCreationMember);

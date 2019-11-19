@@ -106,53 +106,86 @@ function DrawRightRuler(ctx) {
 
 function DrawHorRulerOne(ctx, x, y) {
 
+    var color = '#6ABD45';
+
+    ctx.stroke();
+
+    ctx.beginPath();
+
     ctx.moveTo(x, y);
 
     ctx.lineTo(x + 150, y);
 
+    ctx.strokeStyle = color;
+
+    ctx.stroke();
+
     var lineNumber = 0;
-     
+
     for (var i = 0; i < 31; i++) {
 
         ctx.moveTo(x, y);
 
         if (i % 5 === 0) {
-        
+             
             ctx.lineTo(x, y + 16);
+
+            ctx.strokeStyle = color;
+
+            ctx.fillStyle = color;
 
             ctx.fillText(lineNumber, x - 5, y + 28);
 
+            ctx.strokeStyle = color;
+
             ctx.stroke();
+
+            SetContextDefaultStyle(ctx);
 
             lineNumber += 10;
 
             SetContextLightGrayStyle(ctx);
 
             ctx.moveTo(x, y + 40);
-         
+
             ctx.lineTo(x, tabelHeight);
-           
+
             ctx.stroke();
-   
+
             SetContextDefaultStyle(ctx);
         }
         else {
+            ctx.strokeStyle = color;
+
+            ctx.fillStyle = color;
+
             ctx.lineTo(x, y + 10);
+
+            ctx.stroke();
 
         }
 
         x += 5;
     }
- 
+
 }
 
-function DrawHorRulerTwo(ctx, x, y) {
+function DrawHorRulerTwo(ctx, x, y, color) {
+
+    ctx.stroke();
+
+    var lineNumber = 0;
+
+    ctx.beginPath();
 
     ctx.moveTo(x, y);
 
     ctx.lineTo(x + 100, y);
 
-    var lineNumber = 0;
+    ctx.strokeStyle = color;
+
+    ctx.stroke();
+
 
     for (var i = 0; i < 21; i++) {
 
@@ -163,6 +196,10 @@ function DrawHorRulerTwo(ctx, x, y) {
             ctx.lineTo(x, y + 16);
 
             if (i % 10 === 0) {
+
+                ctx.strokeStyle = color;
+
+                ctx.fillStyle = color;
 
                 ctx.fillText(lineNumber, x - (i === 0 ? 3 : 10), y + 28);
 
@@ -182,13 +219,17 @@ function DrawHorRulerTwo(ctx, x, y) {
             SetContextDefaultStyle(ctx);
         }
         else {
+            ctx.strokeStyle = color;
+
+            ctx.fillStyle = color;
+
             ctx.lineTo(x, y + 10);
 
-            
+
         }
 
         x += 5;
     }
- 
+
 
 }

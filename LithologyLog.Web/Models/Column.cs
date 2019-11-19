@@ -17,6 +17,7 @@ namespace LithologyLog.Web.Models
         public ICollection<Column_10> Columns_10 { get; set; }
         public ICollection<Column_11> Columns_11 { get; set; }
         public ICollection<Column_12> Columns_12 { get; set; }
+        public ICollection<Column_13> Columns_13 { get; set; }
     }
 
     public class ColumnSetting
@@ -86,20 +87,24 @@ namespace LithologyLog.Web.Models
     public class Column_11 : ColumnBase
     {
         public float Y2 { get; set; }
-        public float PartTwoY { get; set; }
-        public float PartTwoY2 { get; set; }
+        public byte ColumnType { get; set; }
     }
     public class Column_12 : ColumnBase
     {
 
     }
 
+    public class Column_13 : ColumnBase
+    {
+        public float Y2 { get; set; }
+        public byte ColumnType { get; set; }
+    }
 
+    public enum ColumnType
+    {
+        PartOne = 1,
+        PartTwo = 2,
+        PartThree = 3
 
-
-
-
-
-
-
+    }
 }

@@ -205,9 +205,9 @@ function DrawColumn_10(ctx) {
 
         var rullerTwoX1 = X1 + eachColumn + (eachColumn - 100) / 2;
 
-        DrawHorRulerTwo(ctx, rullerOneX1, headerHeight - 40);
+        DrawHorRulerTwo(ctx, rullerOneX1, headerHeight - 40, "#5e9690");
 
-        DrawHorRulerTwo(ctx, rullerTwoX1, headerHeight - 40);
+        DrawHorRulerTwo(ctx, rullerTwoX1, headerHeight - 40, "#a498e2");
     }
 
 
@@ -219,15 +219,22 @@ function DrawColumn_12(ctx) {
     var column = _columns[12];
 
     if (column.Visible) {
+
         var X1 = column.X - column.Width;
 
         HorizontalText(ctx, 12, 100);
 
         var eachColumn = column.Width / 3;
 
-        DrawRectangle(ctx, X1 + eachColumn / 2 - 20, headerHeight - 40, "red", column.PartTextOne);
-        DrawRectangle(ctx, X1 + column.Width / 2 - 20, headerHeight - 40, "red", column.PartTextTwo);
-        DrawRectangle(ctx, X1 + column.Width - eachColumn / 2 - 20, headerHeight - 40, "red", column.PartTextThree);
+        DrawRectangle(ctx, X1 + eachColumn / 2 - 20, "#FDCDA2", column.PartTextOne);
+        DrawRectangle(ctx, X1 + column.Width / 2 - 20, "#DDB5D4", column.PartTextTwo);
+        DrawRectangle(ctx, X1 + column.Width - eachColumn / 2 - 20, "#99D6D0", column.PartTextThree);
+
+        ctx.moveTo(X1 + eachColumn, headerHeight);
+        ctx.lineTo(X1 + eachColumn, tabelHeight);
+
+        ctx.moveTo(X1 + 2 * eachColumn, headerHeight);
+        ctx.lineTo(X1 + 2 * eachColumn, tabelHeight);
 
     }
 }
@@ -249,7 +256,9 @@ function FillColumn(ctx) {
     FillColumn_8(ctx);
     FillColumn_9(ctx);
     FillColumn_10(ctx);
+    FillColumn_11(ctx);
     FillColumn_12(ctx);
+    FillColumn_13(ctx);
 }
 
 
@@ -570,7 +579,7 @@ function FillColumn_10(ctx) {
 
                 width += (column.Width - 155) / 2;
 
-                ctx.fillStyle = "#ecebeb";
+                ctx.fillStyle = "#a0d289";
 
                 ctx.fillRect(X1, height - 20, width, 30);
 
@@ -595,8 +604,6 @@ function FillColumn_10(ctx) {
                     DrawLineBetwenRec(ctx, page, i - 1, X1 + width, height - 20);
 
                 }
-
-
             }
         }
     }
@@ -605,10 +612,91 @@ function FillColumn_10(ctx) {
 
 function FillColumn_11(ctx) {
 
-  
+    var column = _columns[10];
 
+    if (column.Visible) {
+
+        var columnValues = _pageCreationMember.Columns_11;
+
+        for (var i = 0; i < columnValues.length; i++) {
+
+            var Y1 = columnValues[i].Y;
+
+            var Y2 = columnValues[i].Y2;
+
+            var pageY1 = FindPageLeftSide(Y1);
+
+            var pageY2 = FindPageLeftSide(Y2);
+
+            var rullerWidth = parseFloat(columnValues[i].Value);
+
+            var lineText = columnValues[i].Value;
+
+            var color = "#99D6D0";
+
+            if (rullerWidth > 400) {
+
+                lineText = columnValues[i].Value + " <";
+
+                rullerWidth = 400;
+            }
+
+            var width = 105 * rullerWidth / 400;
+
+            width += (column.Width / 2 - 105) / 2;
+
+            var X1 = column.X - column.Width;
+
+            if (columnValues[i].ColumnType === 2) {
+
+                X1 = column.X - column.Width / 2;
+
+                color = "#C6C1E0";
+
+            }
+
+            if (pageY1 === FindCanvasId(ctx)) {
+
+                let beginHeight = (immutablerLeftBeginNumber - Y1 - (pageY1 - 1) * 20) * 70 + rullerHeight;
+
+                let endHeight = (Y1 - Y2) * 70;
+
+                let x = X1 + width / 2 - ctx.measureText(lineText).width / 2;
+
+                let y = beginHeight + endHeight / 2;
+
+                DrawRectangleWithText(ctx, X1, width, beginHeight, endHeight, x, y, color, lineText);
+
+            }
+            else if (pageY2 > FindCanvasId(ctx)) {
+
+                let beginHeight = rullerHeight;
+
+                let endHeight = tabelHeight;
+
+                let x = X1 + width / 2 - ctx.measureText(lineText).width / 2;
+
+                let y = beginHeight + endHeight / 2;
+
+                DrawRectangleWithText(ctx, X1, width, beginHeight, endHeight, x, y, color, lineText);
+
+            }
+            else if (pageY2 === FindCanvasId(ctx)) {
+
+                let beginHeight = rullerHeight;
+
+                let endHeight = (immutablerLeftBeginNumber - Y2) % 20 * 70;
+
+                let x = X1 + width / 2 - ctx.measureText(lineText).width / 2;
+
+                let y = beginHeight + endHeight / 2;
+
+                DrawRectangleWithText(ctx, X1, width, beginHeight, endHeight, x, y, color, lineText);
+            }
+
+        }
+    }
 }
-
 
 function FillColumn_12(ctx) {
 
@@ -640,6 +728,113 @@ function FillColumn_12(ctx) {
     }
 }
 
+function FillColumn_13(ctx) {
+
+    var column = _columns[12];
+
+    if (column.Visible) {
+
+        var columnValues = _pageCreationMember.Columns_13;
+
+        for (var i = 0; i < columnValues.length; i++) {
+
+            var Y1 = columnValues[i].Y;
+
+            var Y2 = columnValues[i].Y2;
+
+            var pageY1 = FindPageLeftSide(Y1);
+
+            var pageY2 = FindPageLeftSide(Y2);
+
+            var eachColumn = column.Width / 3;
+
+            var lineText = columnValues[i].Value;
+
+            var width = eachColumn;
+
+            width = width * parseFloat(lineText) / 100;
+
+            if (parseFloat(lineText) === -1) {
+                lineText = '';
+            }
+            else if (parseFloat(lineText) === 0) {
+                lineText = 'n/ap';
+            }
+
+            var X1 = column.X - column.Width;
+
+            var color = "#FDCDA2";
+
+            if (columnValues[i].ColumnType === 2) {
+
+                X1 += eachColumn;
+
+                color = "#C6C1E0";
+            }
+            else if (columnValues[i].ColumnType === 3) {
+
+                X1 += 2 * eachColumn;
+
+                color = "#C6C1E0";
+            }
+
+            if (pageY1 === FindCanvasId(ctx)) {
+
+                let beginHeight = (immutablerLeftBeginNumber - Y1 - (pageY1 - 1) * 20) * 70 + rullerHeight;
+
+                let endHeightBound = (immutablerLeftBeginNumber - Y2 - (pageY1 - 1) * 20) * 70 + rullerHeight;
+
+                let endHeight = (Y1 - Y2) * 70;
+
+                let x = X1 + eachColumn / 2 - ctx.measureText(lineText).width / 2;
+
+                let y = beginHeight + endHeight / 2;
+
+                if (endHeightBound > tabelHeight) {
+                    y = beginHeight + (tabelHeight - beginHeight) / 2;
+                }
+
+                DrawRectangleWithText(ctx, X1, width, beginHeight, endHeight, x, y, color, lineText);
+
+                ctx.moveTo(X1, beginHeight);
+                ctx.lineTo(X1 + eachColumn, beginHeight);
+
+                ctx.moveTo(X1, beginHeight + endHeight);
+                ctx.lineTo(X1 + eachColumn, beginHeight + endHeight);
+            }
+            else if (pageY2 > FindCanvasId(ctx)) {
+
+                let beginHeight = rullerHeight - 7.5;
+
+                let endHeight = tabelHeight;
+
+                let x = X1 + eachColumn / 2 - ctx.measureText(lineText).width / 2;
+
+                let y = beginHeight + endHeight / 2;
+
+                DrawRectangleWithText(ctx, X1, width, beginHeight, endHeight, x, y, color, lineText);
+
+            }
+            else if (pageY2 === FindCanvasId(ctx)) {
+
+                let beginHeight = rullerHeight - 7.5;
+
+                let endHeight = (immutablerLeftBeginNumber - Y2) % 20 * 70;
+
+                let x = X1 + eachColumn / 2 - ctx.measureText(lineText).width / 2;
+
+                let y = beginHeight + endHeight / 2;
+
+                DrawRectangleWithText(ctx, X1, width, beginHeight, endHeight, x, y, color, lineText);
+
+                ctx.moveTo(X1, beginHeight + endHeight);
+                ctx.lineTo(X1 + eachColumn, beginHeight + endHeight);
+            }
+
+        }
+    }
+}
+
 function FindPageLeftSide(length) {
 
     if (immutablerLeftBeginNumber === length) {
@@ -650,38 +845,13 @@ function FindPageLeftSide(length) {
     return Math.ceil((immutablerLeftBeginNumber - length) / 20);
 }
 
-
 function FindPageRightSide(length) {
 
     return Math.ceil(length / 20);
 }
-
-
 
 function FindCanvasId(ctx) {
     return parseInt(ctx.canvas.id.split('_')[1]);
 }
 
 
-
-function DrawLineBetwenRec(ctx, pageId, order, x, y) {
-
-    for (var i = 0; i < lineArray.length; i++) {
-
-        if (lineArray[i].Order === order && lineArray[i].PageId === pageId) {
-
-            ctx.moveTo(x, y + 0.5);
-
-            ctx.strokeStyle = 'red';
-
-            ctx.fillStyle = 'red';
-
-            ctx.lineTo(lineArray[i].X, lineArray[i].Y1 + 0.5);
-
-            ctx.stroke();
-
-            SetContextDefaultStyle(ctx);
-
-        }
-    }
-}
