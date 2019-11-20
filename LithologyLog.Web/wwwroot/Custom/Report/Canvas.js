@@ -72,12 +72,41 @@ function GenerateHeader(id) {
 
     var div = document.createElement('div');
 
-    div.innerHTML = ` <table class="headerTabel" style="margin-top: ` + (id > 0 ? 100 : 0) + `"; height="150" width="1402">
-                     <tr>
-                         <td>Header</td>
-                     </tr>
-                     </table>
+    div.innerHTML = `   <table class="log-header" style="margin-top: ` + (id > 0 ? 100 : 0) + `" height="150" width="1402">
+        <tr>
+            <td class="tdLeftSide" rowspan="3">Sifariwci</td>
+            <td class="tdLeftCenter">Sahe</td>
+            <td class="tdRightCenter">Qazma avadanliqi</td>
+        </tr>
+        <tr>
+            <td class="tdLeftCenter">Sahe</td>
+            <td class="tdRightCenter">Qazma avadanliqi</td>
+        </tr>
+        <tr>
+            <td class="tdLeftCenter">Sahe</td>
+            <td class="tdRightCenter">Qazma avadanliqi</td>
+        </tr>
+
+        <tr>
+            <td class="tdLeftSide tdTopBorder" rowspan="3">Sifariwci</td>
+            <td class="tdLeftCenter">Sahe</td>
+            <td class="tdRightCenter">Qazma avadanliqi</td>
+        </tr>
+
+        <tr>
+            <td class="tdLeftCenter">Sahe</td>
+            <td class="tdRightCenter">Qazma avadanliqi</td>
+        </tr>
+        <tr>
+            <td class="tdLeftCenter">Sahe</td>
+            <td class="tdRightCenter">Qazma avadanliqi</td>
+        </tr>
+
+    </table>
                   `;
+
+
+  
 
     return div;
 }

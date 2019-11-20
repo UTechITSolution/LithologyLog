@@ -1,9 +1,4 @@
-﻿.headerTabel {
-    border: 1px solid #000000;
-    border-right: 1.5px solid #000000;
-    border-bottom: 0px;
-}
-
+﻿ 
 .footerTabel {
     border-bottom: 1px solid #000000;
     
@@ -15,4 +10,41 @@ canvas {
     image-rendering: -o-crisp-edges; /* OS X & Windows Opera (12.02+) */
     image-rendering: pixelated; /* Awesome future-browsers       */
     -ms-interpolation-mode: nearest-neighbor; /* IE                            */
+}
+
+.log-header {
+    border: 1px solid #000000;
+    border-right: 1.5px solid #000000;
+    border-bottom: 0px;
+}
+
+    .log-header td {
+        border: none;
+        height: 20px;
+    }
+
+.tdTopBorder {
+    border-top: 1px solid #000000 !important;
+}
+.tdLeftSide {
+    width: 650px;
+    border-right: 1px solid #000000 !important;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.tdLeftCenter {
+    width: 375px;
+    border: none !important;
+    text-align: left;
+    border-right: 1px solid red !important;
+   
+    padding-left: 10px;
+}
+
+.tdRightCenter {
+    width: 477px;
+    border: none !important;
+    text-align: left;
+    padding-left: 10px;
 }

@@ -769,13 +769,13 @@ function FillColumn_13(ctx) {
 
                 X1 += eachColumn;
 
-                color = "#C6C1E0";
+                color = "#DDB5D4";
             }
             else if (columnValues[i].ColumnType === 3) {
 
                 X1 += 2 * eachColumn;
 
-                color = "#C6C1E0";
+                color = "#99D6D0";
             }
 
             if (pageY1 === FindCanvasId(ctx)) {
