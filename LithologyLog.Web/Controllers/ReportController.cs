@@ -12,10 +12,12 @@ namespace LithologyLog.Web.Controllers
     public class ReportController : Controller
     {
         private readonly IColumRepository _columRepository;
+        private readonly ITemplateRepository _templateRepository;
 
-        public ReportController(IColumRepository columRepository)
+        public ReportController(IColumRepository columRepository, ITemplateRepository templateRepository)
         {
             _columRepository = columRepository;
+            _templateRepository = templateRepository;
         }
 
         public IActionResult Index()
@@ -122,6 +124,7 @@ namespace LithologyLog.Web.Controllers
                 Columns_11 = columns_11,
                 Columns_12 = columns_12,
                 Columns_13 = columns_13,
+                HeaderTemplateHtml = _templateRepository.GetHeaderHtml()
             };
 
             var json = JsonConvert.SerializeObject(pageCreationMember);

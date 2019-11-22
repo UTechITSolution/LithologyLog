@@ -587,7 +587,7 @@ function FillColumn_10(ctx) {
 
                 SetContextDefaultStyle(ctx);
 
-                ctx.font = "14px Times new roman";
+                ctx.font = "14px Arial";
 
                 let lineText = "N=" + columnValues[i].Value;
 

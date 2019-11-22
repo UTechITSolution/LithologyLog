@@ -150,6 +150,48 @@
   <data name="Fax" xml:space="preserve">
     <value>Fax</value>
   </data>
+  <data name="HeaderBorehole" xml:space="preserve">
+    <value>Quyu</value>
+  </data>
+  <data name="HeaderBoreholeCoordinate" xml:space="preserve">
+    <value>Quyunun koordinatı</value>
+  </data>
+  <data name="HeaderClient" xml:space="preserve">
+    <value>SİFARİŞÇİ</value>
+  </data>
+  <data name="HeaderContractor" xml:space="preserve">
+    <value>İCRAÇI</value>
+  </data>
+  <data name="HeaderCoreRecovery" xml:space="preserve">
+    <value>Kern Çıxarılması</value>
+  </data>
+  <data name="HeaderDepth" xml:space="preserve">
+    <value>Dərinlik</value>
+  </data>
+  <data name="HeaderDiameter" xml:space="preserve">
+    <value>Diametr</value>
+  </data>
+  <data name="HeaderDrillingEquipment" xml:space="preserve">
+    <value>Qazma avadanlığı</value>
+  </data>
+  <data name="HeaderElavation" xml:space="preserve">
+    <value>Quyuağzı mütləq səviyyə</value>
+  </data>
+  <data name="HeaderGroundDedectionWatherLevel" xml:space="preserve">
+    <value>Qrunt su səviyyəsi (açılma səviyyəsi)</value>
+  </data>
+  <data name="HeaderGroundStableWatherLevel" xml:space="preserve">
+    <value>Qrunt su səviyyəsi (qərarlaşma)</value>
+  </data>
+  <data name="HeaderMethode" xml:space="preserve">
+    <value>Qazma metodu</value>
+  </data>
+  <data name="HeaderProject" xml:space="preserve">
+    <value>Layihə</value>
+  </data>
+  <data name="HeaderSite" xml:space="preserve">
+    <value>Sahə</value>
+  </data>
   <data name="LockedOut" xml:space="preserve">
     <value>Hesabınız 5 dəqiqə müddətində bloklanıb</value>
   </data>

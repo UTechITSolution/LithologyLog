@@ -79,6 +79,8 @@ namespace LithologyLog.Web
             services.AddScoped<IUnitOfWork, UnitOfWork>();
           
             services.AddScoped<IColumRepository, ColumRepository>();
+       
+            services.AddScoped<ITemplateRepository, TemplateRepository>();
 
             
 

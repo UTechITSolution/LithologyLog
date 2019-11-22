@@ -160,6 +160,132 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quyu.
+        /// </summary>
+        public static string HeaderBorehole {
+            get {
+                return ResourceManager.GetString("HeaderBorehole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quyunun koordinatı.
+        /// </summary>
+        public static string HeaderBoreholeCoordinate {
+            get {
+                return ResourceManager.GetString("HeaderBoreholeCoordinate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SİFARİŞÇİ.
+        /// </summary>
+        public static string HeaderClient {
+            get {
+                return ResourceManager.GetString("HeaderClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İCRAÇI.
+        /// </summary>
+        public static string HeaderContractor {
+            get {
+                return ResourceManager.GetString("HeaderContractor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kern Çıxarılması.
+        /// </summary>
+        public static string HeaderCoreRecovery {
+            get {
+                return ResourceManager.GetString("HeaderCoreRecovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dərinlik.
+        /// </summary>
+        public static string HeaderDepth {
+            get {
+                return ResourceManager.GetString("HeaderDepth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diametr.
+        /// </summary>
+        public static string HeaderDiameter {
+            get {
+                return ResourceManager.GetString("HeaderDiameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qazma avadanlığı.
+        /// </summary>
+        public static string HeaderDrillingEquipment {
+            get {
+                return ResourceManager.GetString("HeaderDrillingEquipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quyuağzı mütləq səviyyə.
+        /// </summary>
+        public static string HeaderElavation {
+            get {
+                return ResourceManager.GetString("HeaderElavation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qrunt su səviyyəsi (açılma səviyyəsi).
+        /// </summary>
+        public static string HeaderGroundDedectionWatherLevel {
+            get {
+                return ResourceManager.GetString("HeaderGroundDedectionWatherLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qrunt su səviyyəsi (qərarlaşma).
+        /// </summary>
+        public static string HeaderGroundStableWatherLevel {
+            get {
+                return ResourceManager.GetString("HeaderGroundStableWatherLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qazma metodu.
+        /// </summary>
+        public static string HeaderMethode {
+            get {
+                return ResourceManager.GetString("HeaderMethode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layihə.
+        /// </summary>
+        public static string HeaderProject {
+            get {
+                return ResourceManager.GetString("HeaderProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sahə.
+        /// </summary>
+        public static string HeaderSite {
+            get {
+                return ResourceManager.GetString("HeaderSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hesabınız 5 dəqiqə müddətində bloklanıb.
         /// </summary>
         public static string LockedOut {

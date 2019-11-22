@@ -41,7 +41,7 @@ $.ajax({
 
             Init(ctx);
 
-           
+
         }
     }
 });
@@ -72,41 +72,9 @@ function GenerateHeader(id) {
 
     var div = document.createElement('div');
 
-    div.innerHTML = `   <table class="log-header" style="margin-top: ` + (id > 0 ? 100 : 0) + `" height="150" width="1402">
-        <tr>
-            <td class="tdLeftSide" rowspan="3">Sifariwci</td>
-            <td class="tdLeftCenter">Sahe</td>
-            <td class="tdRightCenter">Qazma avadanliqi</td>
-        </tr>
-        <tr>
-            <td class="tdLeftCenter">Sahe</td>
-            <td class="tdRightCenter">Qazma avadanliqi</td>
-        </tr>
-        <tr>
-            <td class="tdLeftCenter">Sahe</td>
-            <td class="tdRightCenter">Qazma avadanliqi</td>
-        </tr>
+    var marginTop = id > 0 ? 100 : 0;
 
-        <tr>
-            <td class="tdLeftSide tdTopBorder" rowspan="3">Sifariwci</td>
-            <td class="tdLeftCenter">Sahe</td>
-            <td class="tdRightCenter">Qazma avadanliqi</td>
-        </tr>
-
-        <tr>
-            <td class="tdLeftCenter">Sahe</td>
-            <td class="tdRightCenter">Qazma avadanliqi</td>
-        </tr>
-        <tr>
-            <td class="tdLeftCenter">Sahe</td>
-            <td class="tdRightCenter">Qazma avadanliqi</td>
-        </tr>
-
-    </table>
-                  `;
-
-
-  
+    div.innerHTML = _pageCreationMember.HeaderTemplateHtml.replace('#MarginTop', marginTop);
 
     return div;
 }
@@ -182,7 +150,7 @@ function SetContextDefaultStyle(ctx) {
 
     ctx.beginPath();
 
-    ctx.font = "16px Times new roman";
+    ctx.font = "16px Arial";
 
     ctx.setLineDash([]);
 
@@ -201,5 +169,5 @@ function SetContextLightGrayStyle(ctx) {
     ctx.lineWidth = 0.7;
 }
 
- 
+
 

@@ -90,7 +90,7 @@
     "PartTextTwo": null,
     "PartTextThree": null,
     "X": 0,
-    "Width": 200.0,
+    "Width": 230.0,
     "IncreaseSize": 0.0,
     "Visible": true,
     "Order": 9
@@ -140,7 +140,7 @@
     "X": 0,
     "Width": 30.0,
     "IncreaseSize": 0.0,
-    "Visible": true,
+    "Visible": false,
     "Order": 7
   },
   {

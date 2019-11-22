@@ -81,7 +81,7 @@ namespace LithologyLog.Web.Repository
             {
                 string lang = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
 
-                string jsonColumns = File.ReadAllText(Path.Combine("wwwroot", $"ColumnList/ColumnList_{lang}.json"));
+                string jsonColumns = File.ReadAllText(Path.Combine("wwwroot", "Resource", $"ColumnList_{lang}.json"));
 
                 _columns = JsonConvert.DeserializeObject<List<Column>>(jsonColumns);
 

@@ -20,7 +20,7 @@ function DrawRectangleWithText(ctx, X1, width, beginHeight, endHeight, x, y, col
 
     SetContextDefaultStyle(ctx);
 
-    ctx.font = "14px Times new roman";
+    ctx.font = "14px Arial";
 
     ctx.fillText(lineText, x, y);
 

@@ -5,6 +5,7 @@ namespace LithologyLog.Web.Models
 {
     public class PageCreationMember
     {
+        public string HeaderTemplateHtml { get; set; }
         public float RullerLeftBeginNumber { get; set; }
         public ICollection<Column> Columns { get; set; }
         public ICollection<Column_3> Columns_3 { get; set; }
