@@ -79,6 +79,15 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yeni sətr.
+        /// </summary>
+        public static string AddRow {
+            get {
+                return ResourceManager.GetString("AddRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bu təşkilat artıq mövcutdur.
         /// </summary>
         public static string AleadyTakenOrganization {
@@ -115,11 +124,119 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SPT-nin nəticələrin dərinlikdən asıllığı əyrisi.
+        /// </summary>
+        public static string Column10 {
+            get {
+                return ResourceManager.GetString("Column10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drenjasız ilişmə qüvvəsi, kPa.
+        /// </summary>
+        public static string Column11 {
+            get {
+                return ResourceManager.GetString("Column11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sample tipi.
+        /// </summary>
+        public static string Column12 {
+            get {
+                return ResourceManager.GetString("Column12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kern çıxarılma.
+        /// </summary>
+        public static string Column13 {
+            get {
+                return ResourceManager.GetString("Column13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layın dabanının mütləq səviyyəsi.
+        /// </summary>
+        public static string Column3 {
+            get {
+                return ResourceManager.GetString("Column3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layın dabanının dərinliyi m.
+        /// </summary>
+        public static string Column4 {
+            get {
+                return ResourceManager.GetString("Column4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sample növü.
+        /// </summary>
+        public static string Column5 {
+            get {
+                return ResourceManager.GetString("Column5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Litologiya.
+        /// </summary>
+        public static string Column6 {
+            get {
+                return ResourceManager.GetString("Column6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nümunənin götürülmə dərinliyi.
+        /// </summary>
+        public static string Column7 {
+            get {
+                return ResourceManager.GetString("Column7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Litoloji təsvir.
+        /// </summary>
+        public static string Column8 {
+            get {
+                return ResourceManager.GetString("Column8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SPT-nin nəticələri.
+        /// </summary>
+        public static string Column9 {
+            get {
+                return ResourceManager.GetString("Column9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deaktif.
         /// </summary>
         public static string Deactive {
             get {
                 return ResourceManager.GetString("Deactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sətri sil.
+        /// </summary>
+        public static string DeleteRow {
+            get {
+                return ResourceManager.GetString("DeleteRow", resourceCulture);
             }
         }
         
@@ -232,6 +349,15 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Qazma metodu.
+        /// </summary>
+        public static string HeaderDrillingMethode {
+            get {
+                return ResourceManager.GetString("HeaderDrillingMethode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quyuağzı mütləq səviyyə.
         /// </summary>
         public static string HeaderElavation {
@@ -255,15 +381,6 @@ namespace LithologyLog.Web.Resources {
         public static string HeaderGroundStableWatherLevel {
             get {
                 return ResourceManager.GetString("HeaderGroundStableWatherLevel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Qazma metodu.
-        /// </summary>
-        public static string HeaderMethode {
-            get {
-                return ResourceManager.GetString("HeaderMethode", resourceCulture);
             }
         }
         

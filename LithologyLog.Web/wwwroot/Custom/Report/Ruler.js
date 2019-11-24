@@ -1,4 +1,6 @@
-﻿function DrawLeftRuler(ctx) {
+﻿var _font = "14px Arial";
+
+function DrawLeftRuler(ctx) {
 
     var startIndex = 0;
 
@@ -114,7 +116,7 @@ function DrawHorRulerOne(ctx, x, y) {
 
     ctx.moveTo(x, y);
 
-    ctx.lineTo(x + 150, y);
+    ctx.lineTo(x + 125, y);
 
     ctx.strokeStyle = color;
 
@@ -122,7 +124,7 @@ function DrawHorRulerOne(ctx, x, y) {
 
     var lineNumber = 0;
 
-    for (var i = 0; i < 31; i++) {
+    for (var i = 0; i < 26; i++) {
 
         ctx.moveTo(x, y);
 

@@ -1,0 +1,23 @@
+﻿<button onclick="addRow('dataTable')" class="btn btn-primary">
+    <i class="fa fa-plus-square-o fa-lg"></i><span>&nbsp; @sharedLocalizer["AddRow"]</span>
+</button>
+<button onclick="deleteRow('dataTable')" class="btn btn-primary">
+    <i class="fa fa-trash-o fa-lg"></i> &nbsp; @sharedLocalizer["DeleteRow"]
+</button>
+<hr />
+<table id="dataTable" class="table table-bordered width="600px">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Col_2</th>
+            <th>Col_3</th>
+        </tr>
+    </thead>
+    <tr>
+        <td style="width:5%"><input type="checkbox" name="chk" /></td>
+        <td style="width:55%"><input type="text" name="txt" class="w-99" /></td>
+        <td style="width:40%">
+            <input type="number" name="surname" class="w-99" />
+        </td>
+    </tr>
+</table>

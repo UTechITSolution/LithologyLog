@@ -1,0 +1,52 @@
+﻿
+
+<link href="~/assets/css/ReportCreate.css" rel="stylesheet" />
+<script src="~/Custom/Report/crudoperation.js"></script>
+
+<div class="row" style="margin-top:10px">
+
+    <div class="col-lg-12 m-t-12">
+        <div class="card">
+
+            <div class="card-body">
+                <div class="d-md-flex">
+                    <div class="nav flex-column nav-pills mr-12 mb-12 mb-sm-1" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                        @for (int i = 3; i < 14; i++)
+                        {
+                            string columnName = $"Column{i}";
+
+                            string active = i == 3 ? "active show" : "";
+
+                            <a class="nav-link  @active  tab-a show" id="v-pills-home-tab" data-toggle="pill" href="#@columnName" role="tab" aria-controls="columnName" aria-selected="true">@sharedLocalizer[columnName]</a>
+                        }
+                    </div>
+                    <div class="tab-content" id="v-pills-tabContent" style="width:70%; margin-left:5px;">
+
+                        @for (int i = 3; i < 14; i++)
+                        {
+                            string columnName = $"Column{i}";
+
+                            string active = i == 3 ? "active" : "";
+
+                            <div class="tab-pane fade @active show" id="@columnName" role="tabpanel" aria-labelledby="@columnName-tab">
+
+                                @if (i == 3)
+                                {
+                                    <partial name="@($"_{columnName}Partial")" />
+                                }
+
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</div>

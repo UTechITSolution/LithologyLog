@@ -161,9 +161,13 @@ function DrawColumn_9(ctx) {
 
         var X1 = column.X - column.Width;
 
+        let beginPoint = (column.Width - 125) / 2 - 5;
+
+        X1 += beginPoint;
+
         HorizontalText(ctx, 9, headerHeight / 2);
 
-        DrawHorRulerOne(ctx, X1 + 8, headerHeight - 40);
+        DrawHorRulerOne(ctx, X1, headerHeight - 40);
     }
 
 
@@ -201,9 +205,9 @@ function DrawColumn_10(ctx) {
 
         ctx.fillText(column.PartTextTwo, X1 + eachColumn + marginLeft, headerHeight - 60);
 
-        var rullerOneX1 = X1 + (eachColumn - 100) / 2;
+        var rullerOneX1 = X1 + (eachColumn - 100) / 2 - 5;
 
-        var rullerTwoX1 = X1 + eachColumn + (eachColumn - 100) / 2;
+        var rullerTwoX1 = X1 + eachColumn + (eachColumn - 100) / 2 - 5;
 
         DrawHorRulerTwo(ctx, rullerOneX1, headerHeight - 40, "#5e9690");
 
@@ -324,11 +328,33 @@ function FillColumn_5(ctx) {
     var column = _columns[4];
 
     if (column.Visible) {
+
         var columnValues = _pageCreationMember.Columns_5;
+
+        let X1 = column.X - column.Width;
 
         for (var i = 0; i < columnValues.length; i++) {
 
-            FillCell(ctx, columnValues[i].Y, 4, columnValues[i].Value);
+            let length = columnValues[i].Y;
+
+            var page = FindPageLeftSide(length);
+
+            if (page === FindCanvasId(ctx)) {
+
+                var height = (immutablerLeftBeginNumber - length - (page - 1) * 20) * 70 + rullerHeight;
+
+                ctx.moveTo(column.X - column.Width, height);
+
+                ctx.lineTo(column.X, height);
+
+                var marginLeft = (column.Width - 25) / 2;
+
+                let img = new Image();
+                img.src = columnValues[i].ImageSrc;
+                img.onload = () => {
+                    ctx.drawImage(img, X1 + marginLeft, height);
+                };
+            }
         }
     }
 }
@@ -457,6 +483,7 @@ function FillColumn_7(ctx) {
             if (page === FindCanvasId(ctx)) {
 
                 if (length > 20) {
+
                     length -= (page - 1) * 20;
                 }
 
@@ -476,8 +503,6 @@ function FillColumn_7(ctx) {
 
         }
     }
-
-
 }
 
 function FillColumn_8(ctx) {
@@ -500,7 +525,6 @@ function FillColumn_8(ctx) {
 
                 var linesArray = SplitText(ctx, columnValues[i].Value, column.Width);
 
-
                 linesArray.reverse();
 
                 for (var t = 0; t < linesArray.length; t++) {
@@ -514,7 +538,7 @@ function FillColumn_8(ctx) {
                         nextLineArray.push(linesArray[t]);
                     }
                     else {
-                        ctx.fillText(linesArray[t], X1 + 3, increaseHeight);
+                        ctx.fillText(linesArray[t], X1 + 5, increaseHeight);
                     }
                 }
 
@@ -575,23 +599,34 @@ function FillColumn_10(ctx) {
 
                 let rullerWidth = parseFloat(columnValues[i].Value);
 
-                let width = 155 * rullerWidth / 60;
+                let lineText = "N=" + columnValues[i].Value;
 
-                width += (column.Width - 155) / 2;
+
+                if (rullerWidth > 50) {
+
+                    lineText = "N=" + columnValues[i].Value + " <";
+
+                    rullerWidth = 50;
+                }
+
+                let width = 125 * rullerWidth / 50;
+
+                let beginPoint = (column.Width - 125) / 2 - 5;
 
                 ctx.fillStyle = "#a0d289";
 
-                ctx.fillRect(X1, height - 20, width, 30);
+                ctx.fillRect(X1 + beginPoint, height - 20, width, 30);
 
                 ctx.stroke();
 
                 SetContextDefaultStyle(ctx);
 
-                ctx.font = "14px Arial";
+                ctx.font = _font;
 
-                let lineText = "N=" + columnValues[i].Value;
+               
+               
 
-                ctx.fillText(lineText, X1 + width / 2 - ctx.measureText(lineText).width / 2, height);
+                ctx.fillText(lineText, X1 + beginPoint + width / 2 - ctx.measureText(lineText).width / 2, height);
 
                 SetContextDefaultStyle(ctx);
 
@@ -646,11 +681,14 @@ function FillColumn_11(ctx) {
             width += (column.Width / 2 - 105) / 2;
 
             var X1 = column.X - column.Width;
+            let beginPoint = (column.Width - 105 * 2) / 4 - 3;
+
+            X1 += beginPoint;
 
             if (columnValues[i].ColumnType === 2) {
 
                 X1 = column.X - column.Width / 2;
-
+                X1 += beginPoint;
                 color = "#C6C1E0";
 
             }
@@ -702,28 +740,39 @@ function FillColumn_12(ctx) {
 
     var column = _columns[11];
 
-
     if (column.Visible) {
 
         var columnValues = _pageCreationMember.Columns_12;
 
         for (var i = 0; i < columnValues.length; i++) {
 
-            var length = columnValues[i].Y;
+            FillCell(ctx, columnValues[i].Y, 11, null);
 
-            var page = FindPageLeftSide(length);
+            var length = columnValues[i].Length1;
+
+            var page = FindPageRightSide(length);
 
             if (page === FindCanvasId(ctx)) {
 
-                var height = (immutablerLeftBeginNumber - length - (page - 1) * 20) * 70 + rullerHeight;
+                if (length > 20) {
+
+                    length -= (page - 1) * 20;
+                }
+
+                var height = length * 70 + rullerHeight;
 
                 ctx.moveTo(column.X - column.Width, height);
 
+                var marginLeft = (column.Width - ctx.measureText(columnValues[i].Value).width) / 2;
+
                 var X1 = column.X - column.Width;
 
-                WriteRotateText(ctx, columnValues[i].Value, X1 + column.Width / 2 + 5, height);
+                ctx.fillText(columnValues[i].Value, X1 + marginLeft, height - 20);
 
             }
+
+
+
         }
     }
 }

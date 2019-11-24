@@ -72,22 +72,23 @@ function WriteRotateText(ctx, text, x, y) {
 
 function FillText(ctx, text, x, y) {
 
+    y = y + 7;
     var res = text.split("~");
 
     var lineMargin = 0;
 
     if (res.length === 2) {
-        lineMargin = 15;
+        lineMargin = 10;
     }
     if (res.length === 3) {
-        lineMargin = 30;
+        lineMargin = 20;
     }
 
 
     WriteRotateText(ctx, res[0], x - lineMargin, y);
 
     if (res.length >= 2) {
-        WriteRotateText(ctx, res[1], x, y);
+        WriteRotateText(ctx, res[1], x+10, y);
     }
     if (res.length >= 3) {
         WriteRotateText(ctx, res[2], x + lineMargin + 10, y);

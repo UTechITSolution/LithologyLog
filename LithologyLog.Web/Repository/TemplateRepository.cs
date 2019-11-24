@@ -32,7 +32,7 @@ namespace LithologyLog.Web.Repository
                 "HeaderDrillingEquipment",
                 "HeaderSite",
                 "HeaderProject",
-                "HeaderMethode",
+                "HeaderDrillingMethode",
                 "HeaderBorehole",
                 "HeaderGroundDedectionWatherLevel",
                 "HeaderDepth",

@@ -123,6 +123,9 @@
   <data name="AddedPanel" xml:space="preserve">
     <value>Daxil etmə paneli</value>
   </data>
+  <data name="AddRow" xml:space="preserve">
+    <value>Yeni sətr</value>
+  </data>
   <data name="AleadyTakenOrganization" xml:space="preserve">
     <value>Bu təşkilat artıq mövcutdur</value>
   </data>
@@ -135,8 +138,44 @@
   <data name="Close" xml:space="preserve">
     <value>Bağla</value>
   </data>
+  <data name="Column10" xml:space="preserve">
+    <value>SPT-nin nəticələrin dərinlikdən asıllığı əyrisi</value>
+  </data>
+  <data name="Column11" xml:space="preserve">
+    <value>Drenjasız ilişmə qüvvəsi, kPa</value>
+  </data>
+  <data name="Column12" xml:space="preserve">
+    <value>Sample tipi</value>
+  </data>
+  <data name="Column13" xml:space="preserve">
+    <value>Kern çıxarılma</value>
+  </data>
+  <data name="Column3" xml:space="preserve">
+    <value>Layın dabanının mütləq səviyyəsi</value>
+  </data>
+  <data name="Column4" xml:space="preserve">
+    <value>Layın dabanının dərinliyi m</value>
+  </data>
+  <data name="Column5" xml:space="preserve">
+    <value>Sample növü</value>
+  </data>
+  <data name="Column6" xml:space="preserve">
+    <value>Litologiya</value>
+  </data>
+  <data name="Column7" xml:space="preserve">
+    <value>Nümunənin götürülmə dərinliyi</value>
+  </data>
+  <data name="Column8" xml:space="preserve">
+    <value>Litoloji təsvir</value>
+  </data>
+  <data name="Column9" xml:space="preserve">
+    <value>SPT-nin nəticələri</value>
+  </data>
   <data name="Deactive" xml:space="preserve">
     <value>Deaktif</value>
+  </data>
+  <data name="DeleteRow" xml:space="preserve">
+    <value>Sətri sil</value>
   </data>
   <data name="EditPanel" xml:space="preserve">
     <value>Redaktə paneli</value>
@@ -174,6 +213,9 @@
   <data name="HeaderDrillingEquipment" xml:space="preserve">
     <value>Qazma avadanlığı</value>
   </data>
+  <data name="HeaderDrillingMethode" xml:space="preserve">
+    <value>Qazma metodu</value>
+  </data>
   <data name="HeaderElavation" xml:space="preserve">
     <value>Quyuağzı mütləq səviyyə</value>
   </data>
@@ -182,9 +224,6 @@
   </data>
   <data name="HeaderGroundStableWatherLevel" xml:space="preserve">
     <value>Qrunt su səviyyəsi (qərarlaşma)</value>
-  </data>
-  <data name="HeaderMethode" xml:space="preserve">
-    <value>Qazma metodu</value>
   </data>
   <data name="HeaderProject" xml:space="preserve">
     <value>Layihə</value>

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using LithologyLog.Web.Models;
+﻿using LithologyLog.Web.Models;
 using LithologyLog.Web.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace LithologyLog.Web.Controllers
 {
@@ -25,6 +23,17 @@ namespace LithologyLog.Web.Controllers
             return View();
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> Create(string s)
+        {
+            return Json("");
+        }
+
         public IActionResult ReportView()
         {
             return View();
@@ -34,11 +43,7 @@ namespace LithologyLog.Web.Controllers
         {
             _columRepository.Fill();
 
-            //_columRepository.Hide(3, 4, 5);
-
             var columns = _columRepository.GetColumns();
-
-
 
             ICollection<Column_3> columns_3 = new List<Column_3>
             {
@@ -52,7 +57,7 @@ namespace LithologyLog.Web.Controllers
 
             ICollection<Column_5> columns_5 = new List<Column_5>
             {
-               new Column_5 { Value= "1.5",Y= 98.97f }
+              new Column_5 { ImageSrc="/assets/images/Texture/arrow.png", Y= 98.97f, Y2=76.97f }
             };
 
             ICollection<Column_6> columns_6 = new List<Column_6>
@@ -85,8 +90,7 @@ namespace LithologyLog.Web.Controllers
 
             ICollection<Column_12> columns_12 = new List<Column_12>
             {
-               new Column_12 { Value= "anQIV",Y= 98.97f },
-               new Column_12 { Value= "Xəzər mərtəbəsi",Y= 86.97f }
+              new Column_12 { Value="01", Y= 98.97f, Length1=2.50f, Length2=2.80f }
             };
 
             ICollection<Column_11> columns_11 = new List<Column_11>

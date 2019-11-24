@@ -5,7 +5,7 @@
     "PartTextOne": null,
     "PartTextTwo": null,
     "PartTextThree": null,
-    "X":0,
+    "X": 0,
     "Width": 50.0,
     "IncreaseSize": 0.0,
     "Visible": true,
@@ -30,7 +30,7 @@
     "PartTextTwo": null,
     "PartTextThree": null,
     "X": 0,
-    "Width": 70.0,
+    "Width": 60.0,
     "IncreaseSize": 0.0,
     "Visible": true,
     "Order": 3
@@ -42,22 +42,22 @@
     "PartTextTwo": null,
     "PartTextThree": null,
     "X": 0,
-    "Width": 70.0,
+    "Width": 50.0,
     "IncreaseSize": 0.0,
     "Visible": true,
     "Order": 4
   },
   {
     "Index": 5,
-    "MainText": "Layın qalınlığı, m",
+    "MainText": "Sample növü",
     "PartTextOne": null,
     "PartTextTwo": null,
     "PartTextThree": null,
     "X": 0,
-    "Width": 60.0,
+    "Width": 35.0,
     "IncreaseSize": 0.0,
     "Visible": true,
-    "Order": 5
+    "Order": 6
   },
   {
     "Index": 6,
@@ -69,11 +69,11 @@
     "Width": 60.0,
     "IncreaseSize": 0.0,
     "Visible": true,
-    "Order": 6
+    "Order": 5
   },
   {
     "Index": 7,
-    "MainText": "Nümunənin götürülmə~intervalı",
+    "MainText": "Nümunənin götürülmə~dərinliyi",
     "PartTextOne": null,
     "PartTextTwo": null,
     "PartTextThree": null,
@@ -90,7 +90,7 @@
     "PartTextTwo": null,
     "PartTextThree": null,
     "X": 0,
-    "Width": 230.0,
+    "Width": 356.0,
     "IncreaseSize": 0.0,
     "Visible": true,
     "Order": 9
@@ -99,8 +99,8 @@
     "Index": 9,
     "MainText": "SPT-nin~nəticələri",
     "PartTextOne": "0 - 15 sm",
-    "PartTextTwo": "15 -30 sm",
-    "PartTextThree": "30 -45 sm",
+    "PartTextTwo": "15 - 30 sm",
+    "PartTextThree": "30 - 45 sm",
     "X": 0,
     "Width": 70.0,
     "IncreaseSize": 0.0,
@@ -114,7 +114,7 @@
     "PartTextTwo": null,
     "PartTextThree": null,
     "X": 0,
-    "Width": 170.0,
+    "Width": 150.0,
     "IncreaseSize": 0.0,
     "Visible": true,
     "Order": 11
@@ -126,21 +126,21 @@
     "PartTextTwo": "/Pərli cihaz/",
     "PartTextThree": null,
     "X": 0,
-    "Width": 280.0,
+    "Width": 260.0,
     "IncreaseSize": 0.0,
     "Visible": true,
     "Order": 12
   },
   {
     "Index": 12,
-    "MainText": "Stratiqrafik index",
+    "MainText": "Sample tipi",
     "PartTextOne": null,
     "PartTextTwo": null,
     "PartTextThree": null,
     "X": 0,
     "Width": 30.0,
     "IncreaseSize": 0.0,
-    "Visible": false,
+    "Visible": true,
     "Order": 7
   },
   {
@@ -150,7 +150,7 @@
     "PartTextTwo": "SCR",
     "PartTextThree": "RQD",
     "X": 0,
-    "Width": 220.0,
+    "Width": 160.0,
     "IncreaseSize": 0.0,
     "Visible": true,
     "Order": 13

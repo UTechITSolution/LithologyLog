@@ -59,7 +59,8 @@ namespace LithologyLog.Web.Models
     }
     public class Column_5 : ColumnBase
     {
-
+        public float Y2 { get; set; }
+        public string ImageSrc { get; set; }
     }
     public class Column_6 : ColumnBase
     {
@@ -92,7 +93,8 @@ namespace LithologyLog.Web.Models
     }
     public class Column_12 : ColumnBase
     {
-
+        public float Length1 { get; set; }
+        public float Length2 { get; set; }
     }
 
     public class Column_13 : ColumnBase

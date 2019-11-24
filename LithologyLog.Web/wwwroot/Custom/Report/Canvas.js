@@ -150,7 +150,7 @@ function SetContextDefaultStyle(ctx) {
 
     ctx.beginPath();
 
-    ctx.font = "16px Arial";
+    ctx.font = "15.8px Arial";
 
     ctx.setLineDash([]);
 

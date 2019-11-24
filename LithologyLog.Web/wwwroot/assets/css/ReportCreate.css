@@ -1,0 +1,30 @@
+﻿td {
+    border: none;
+}
+
+.tabel-header {
+    height: 35px;
+    color: #ffffff;
+}
+
+.w-99 {
+    width: 99% !important;
+}
+
+
+
+input[type=checkbox] {
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.4); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    margin-top: 7px;
+}
+
+.tab-a {
+    color: #000000;
+    line-height: 12px !important;
+}
+.table td, .table th {
+    padding: 0.3rem !important;
+}
