@@ -4,14 +4,16 @@ using LithologyLog.Model.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace LithologyLog.Model.Migrations
 {
     [DbContext(typeof(LithologyLogContext))]
-    partial class LithologyLogContextModelSnapshot : ModelSnapshot
+    [Migration("20191127181351_Add_Report")]
+    partial class Add_Report
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

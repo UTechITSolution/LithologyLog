@@ -1,4 +1,7 @@
-﻿function addRow(tabelId) {
+﻿document.addEventListener('DOMContentLoaded', ChangeStyle, false);
+
+
+function addRow(tabelId) {
 
     var table = document.getElementById(tabelId);
 
@@ -106,4 +109,55 @@ function fillRows(tabelId, data) {
 
         rowCount++;
     }
+}
+
+
+function ChangeStyle() {
+    $('.select2DropDown').select2({
+        placeholder: "Seçin"
+    });
+}
+
+function toJSONString(form) {
+    var obj = {};
+    var elements = form.querySelectorAll("input, select, textarea");
+    for (var i = 0; i < elements.length; ++i) {
+        var element = elements[i];
+        var name = element.name;
+        var value = element.value;
+        console.log(element.type);
+        if (name) {
+            switch (element.type) {
+                case "select-one":
+                    value = parseInt(value);
+                    break;
+                case "number":
+                    value = parseInt(value);
+                    break;
+            }
+
+            obj[name] = value;
+        }
+    }
+
+    return JSON.stringify(obj);
+}
+
+
+function createLog() {
+
+    $.ajax({
+        url: "Report/Create",
+        type: "POST",
+        data: $form.serialize(),
+        success: function (response) {
+
+            SwalUtility.Success();
+
+        }
+    }).fail(function () {
+
+        SwalUtility.Fail();
+
+    });
 }

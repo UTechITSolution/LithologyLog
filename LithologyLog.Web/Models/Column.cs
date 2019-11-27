@@ -19,6 +19,27 @@ namespace LithologyLog.Web.Models
         public ICollection<Column_11> Columns_11 { get; set; }
         public ICollection<Column_12> Columns_12 { get; set; }
         public ICollection<Column_13> Columns_13 { get; set; }
+
+    }
+
+    public class LogHeader
+    {
+        public int Id { get; set; }
+        public int ContractorOrgId { get; set; }
+        public int ClientOrgId { get; set; }
+        public string SiteName { get; set; }
+        public string ProjectName { get; set; }
+        public string Borehole { get; set; }
+        public float Depth { get; set; }
+        public float Diameter { get; set; }
+        public float CoreRecovery { get; set; }
+        public string DrillingEquipment { get; set; }
+        public string DrillingMethode { get; set; }
+        public float GroundDedectionWatherLevel { get; set; }
+        public float GroundStableWatherLevelValue { get; set; }
+        public float Elavation { get; set; }
+        public float BoreholeNCoordinate { get; set; }
+        public float BoreholeECoordinate { get; set; }
     }
 
     public class ColumnSetting

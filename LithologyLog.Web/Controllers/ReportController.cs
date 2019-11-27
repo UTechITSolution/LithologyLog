@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
-
+using LithologyLog.Model;
+using LithologyLog.Repository;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LithologyLog.Web.Controllers
 {
@@ -16,12 +18,17 @@ namespace LithologyLog.Web.Controllers
         private readonly IColumRepository _columRepository;
         private readonly ITemplateRepository _templateRepository;
         private readonly IReportFacade _reportFacade;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ReportController(IColumRepository columRepository, ITemplateRepository templateRepository, IReportFacade reportFacade)
+        public ReportController(IColumRepository columRepository, 
+                                ITemplateRepository templateRepository, 
+                                IReportFacade reportFacade,
+                                IUnitOfWork unitOfWork)
         {
             _columRepository = columRepository;
             _templateRepository = templateRepository;
             _reportFacade = reportFacade;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult LoadDataForTable()
@@ -70,6 +77,14 @@ namespace LithologyLog.Web.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.OrgList = _unitOfWork.Repository<Organization>().Query()
+                                      .Select(a => new SelectListItem()
+                                      {
+                                          Value = a.Id.ToString(),
+                                          Text = a.Name
+                                      })
+                                    .ToList();
+
             return View();
         }
 

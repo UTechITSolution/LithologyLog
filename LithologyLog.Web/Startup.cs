@@ -126,7 +126,7 @@ namespace LithologyLog.Web
 
             #region Facades
 
-            services.AddSingleton<IReportFacade, ReportFacade>();
+            services.AddScoped<IReportFacade, ReportFacade>();
 
             #endregion
 

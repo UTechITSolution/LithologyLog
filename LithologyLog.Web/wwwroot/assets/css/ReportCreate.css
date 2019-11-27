@@ -1,4 +1,9 @@
-﻿td {
+﻿.btnSave {
+    float: right;
+    font-size: 16px
+}
+
+td {
     border: none;
 }
 

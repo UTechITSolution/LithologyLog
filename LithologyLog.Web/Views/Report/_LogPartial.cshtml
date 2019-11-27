@@ -1,0 +1,80 @@
+﻿<form id="frmLogInfo">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="ContractorOrgId">@(sharedLocalizer["HeaderContractor"].FirstCharToUpper())</label>
+            <select name="ContractorOrgId" id="ContractorOrgId" class="custom-select select2DropDown" required="" asp-items="@ViewBag.OrgList">
+                <option></option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="ClientOrgId">@(sharedLocalizer["HeaderClient"].FirstCharToUpper())</label>
+            <select name="ClientOrgId" id="ClientOrgId" class="custom-select select2DropDown" required="" asp-items="@ViewBag.OrgList">
+                <option></option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="Site">@(sharedLocalizer["HeaderSite"])</label>
+            <input name="Site" id="Site" type="text" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="Project">@(sharedLocalizer["HeaderProject"])</label>
+            <input name="Project" id="Project" type="text" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="Borehole">@(sharedLocalizer["HeaderBorehole"])</label>
+            <input name="Borehole" id="Borehole" type="text" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="Depth">@(sharedLocalizer["HeaderDepth"])</label>
+            <input name="Depth" id="Depth" type="text" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="Diameter">@(sharedLocalizer["HeaderDiameter"])</label>
+            <input name="Diameter" id="Diameter" type="text" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="CoreRecovery">@(sharedLocalizer["HeaderCoreRecovery"])</label>
+            <input name="CoreRecovery" id="CoreRecovery" type="text" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="DrillingEquipment">@(sharedLocalizer["HeaderDrillingEquipment"])</label>
+            <input name="DrillingEquipment" id="DrillingEquipment" type="text" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="DrillingMethode">@(sharedLocalizer["HeaderDrillingMethode"])</label>
+            <input name="DrillingMethode" id="DrillingMethode" type="text" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="GroundDedectionWatherLevel">@(sharedLocalizer["HeaderGroundDedectionWatherLevel"])</label>
+            <input name="GroundDedectionWatherLevel" id="GroundDedectionWatherLevel" type="text" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="GroundStableWatherLevel">@(sharedLocalizer["HeaderGroundStableWatherLevel"])</label>
+            <input name="GroundStableWatherLevel" id="GroundStableWatherLevel" type="text" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="Elavation">@(sharedLocalizer["HeaderElavation"]+ " m")</label>
+            <input name="Elavation" id="Elavation" type="number" class="form-control">
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="BoreholeCoordinate">@(sharedLocalizer["HeaderBoreholeCoordinate"]+ "(N)")</label>
+            <input name="NGroundDedectionWatherLevel" id="NGroundDedectionWatherLevel" type="number" class="form-control">
+           
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="EGroundDedectionWatherLevel">@(sharedLocalizer["HeaderBoreholeCoordinate"] + "(E)")</label>
+            <input name="EGroundDedectionWatherLevel" id="EGroundDedectionWatherLevel" type="number" class="form-control">
+        </div>
+    </div>
+</form>
+
+

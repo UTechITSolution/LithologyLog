@@ -12,24 +12,30 @@
                 <div class="d-md-flex">
                     <div class="nav flex-column nav-pills mr-12 mb-12 mb-sm-1" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
+                        <a class="nav-link  active show tab-a show" id="v-pills-home-tab" data-toggle="pill" href="#ColumnLog" role="tab" aria-controls="ColumnLog" aria-selected="true">@sharedLocalizer["Log"]</a>
+
                         @for (int i = 3; i < 14; i++)
                         {
                             string columnName = $"Column{i}";
 
-                            string active = i == 3 ? "active show" : "";
-
-                            <a class="nav-link  @active  tab-a show" id="v-pills-home-tab" data-toggle="pill" href="#@columnName" role="tab" aria-controls="columnName" aria-selected="true">@sharedLocalizer[columnName]</a>
+                            <a class="nav-link  tab-a show" id="v-pills-home-tab" data-toggle="pill" href="#@columnName" role="tab" aria-controls="columnName" aria-selected="true">@sharedLocalizer[columnName]</a>
                         }
                     </div>
                     <div class="tab-content" id="v-pills-tabContent" style="width:70%; margin-left:5px;">
 
+
+                        <div class="tab-pane fade  active show" id="ColumnLog" role="tabpanel" aria-labelledby="ColumnLog-tab">
+
+
+                            <partial name="@($"_LogPartial")" />
+
+                        </div>
+
                         @for (int i = 3; i < 14; i++)
                         {
                             string columnName = $"Column{i}";
 
-                            string active = i == 3 ? "active" : "";
-
-                            <div class="tab-pane fade @active show" id="@columnName" role="tabpanel" aria-labelledby="@columnName-tab">
+                            <div class="tab-pane fade" id="@columnName" role="tabpanel" aria-labelledby="@columnName-tab">
 
                                 @if (i == 3)
                                 {
@@ -41,6 +47,7 @@
 
                     </div>
                 </div>
+                <input type="button" class="btn btn-primary btnSave" value="Yadda saxla" />
             </div>
 
 
@@ -50,3 +57,4 @@
 
 
 </div>
+ 
