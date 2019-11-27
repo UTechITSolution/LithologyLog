@@ -234,6 +234,9 @@
   <data name="LockedOut" xml:space="preserve">
     <value>Hesabınız 5 dəqiqə müddətində bloklanıb</value>
   </data>
+  <data name="Log" xml:space="preserve">
+    <value>Log</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Giriş</value>
   </data>

@@ -3,6 +3,7 @@ using LithologyLog.Constant;
 using LithologyLog.Model;
 using LithologyLog.Model.Context;
 using LithologyLog.Repository;
+using LithologyLog.Web.Facades;
 using LithologyLog.Web.Helper;
 using LithologyLog.Web.Lang;
 using LithologyLog.Web.Repository;
@@ -122,6 +123,12 @@ namespace LithologyLog.Web
             IMapper mapper = mappingConfig.CreateMapper();
 
             services.AddSingleton(mapper);
+
+            #region Facades
+
+            services.AddSingleton<IReportFacade, ReportFacade>();
+
+            #endregion
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

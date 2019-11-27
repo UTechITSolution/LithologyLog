@@ -1,0 +1,48 @@
+﻿
+@section styles{
+    <link href="~/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+}
+
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h6>@sharedLocalizer["Log"]</h6>
+        </div>
+        <div class="card-body">
+            <div class=" d-flex justify-content-between">
+                <p>
+                    <a asp-controller="Report" asp-action="Create" id="addButton"   class="btn btn-outline-secondary"><i class="fa fa-plus-circle  mr-2"></i>@sharedLocalizer["New"]</a>
+                </p>
+
+            </div>
+            <hr />
+            <br />
+            <div class="single-table">
+                <div class="table-responsive">
+                    <table id="dataTable" class="table  table-bordered progress-table text-center w-100">
+                        <thead>
+                            <tr role="row">
+                            <tr>
+                                <th>#</th>
+                                <th>@sharedLocalizer["HeaderContractor"]</th>
+                                <th>@sharedLocalizer["HeaderClient"]</th>
+                                <th>@sharedLocalizer["HeaderProject"]</th>
+                                <th>@sharedLocalizer["HeaderSite"]</th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/DataTables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Custom/SwalUtility.js"></script>
+    <script src="~/Custom/Report/DataTabel.js"></script>
+    <script src="~/Custom/Report/crudoperation.js"></script>
+}
+

@@ -1,9 +1,13 @@
-﻿using LithologyLog.Web.Models;
+﻿using LithologyLog.Web.Facades;
+using LithologyLog.Web.Models;
 using LithologyLog.Web.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
+
 
 namespace LithologyLog.Web.Controllers
 {
@@ -11,12 +15,53 @@ namespace LithologyLog.Web.Controllers
     {
         private readonly IColumRepository _columRepository;
         private readonly ITemplateRepository _templateRepository;
+        private readonly IReportFacade _reportFacade;
 
-        public ReportController(IColumRepository columRepository, ITemplateRepository templateRepository)
+        public ReportController(IColumRepository columRepository, ITemplateRepository templateRepository, IReportFacade reportFacade)
         {
             _columRepository = columRepository;
             _templateRepository = templateRepository;
+            _reportFacade = reportFacade;
         }
+
+        public IActionResult LoadDataForTable()
+        {
+            var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
+            // Skiping number of Rows count
+            var start = Request.Form["start"].FirstOrDefault();
+            // Paging Length 10,20
+            var length = Request.Form["length"].FirstOrDefault();
+            // Sort Column Name
+            var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+            // Sort Column Direction ( asc ,desc)
+            var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+            // Search Value from (Search box)
+            var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+            //Paging Size (10,20,50,100)
+            int pageSize = length != null ? Convert.ToInt32(length) : 0;
+            int skip = start != null ? Convert.ToInt32(start) : 0;
+            int recordsTotal = 0;
+
+            var model = _reportFacade.GetAll();
+
+            if (!string.IsNullOrEmpty(searchValue))
+            {
+                model = model.Where(m =>  m.ProjectName.StartsWith(searchValue)
+                                         || m.ClientOrg.StartsWith(searchValue)
+                                         || m.ContractorOrg.StartsWith(searchValue)
+                                         || m.SiteName.StartsWith(searchValue)
+                                         );
+            }
+
+            //total number of rows count 
+            recordsTotal = model.Count();
+            //Paging 
+            var data = model.Skip(skip).Take(pageSize).ToList();
+            //Returning Json Data
+            return Json(new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data });
+        }
+
 
         public IActionResult Index()
         {

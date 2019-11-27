@@ -412,6 +412,15 @@ namespace LithologyLog.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log.
+        /// </summary>
+        public static string Log {
+            get {
+                return ResourceManager.GetString("Log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Giriş.
         /// </summary>
         public static string Login {
